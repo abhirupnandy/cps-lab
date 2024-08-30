@@ -4,12 +4,27 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Carousal from "../components/Carousal.astro";
+import Tab from "../components/Tab.astro";
 import { Image } from "astro:assets";
 import cranium from "../assets/index-page/cranium.png";
 import heart from "../assets/index-page/heart.png";
 import jacket from "../assets/index-page/jacket.png";
 import lock from "../assets/index-page/lock.png";
 import apply from "../assets/index-page/apply.png";
+
+var about_text =
+	"The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS) The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.";
+
+var accordian_data = {
+	"Human Centered Systems":
+		"Cyberization is all pervasive today with technology-driven engineering systems having a significant presence in almost all spheres of life. In fact, with each passing year, they are evolving at a very fast pace in terms of AI, computational capacities and their scope of use. While they offer numerous benefits to society on one hand, the current state of cyberization is creating an intellectual challenge to envision, design and research Human-Centered Systems for the future. Since human-centered systems integrate CPS with various social units – organizations, communities and distinctive social processes and practices; our lab envisions meeting the research challenges of making them more usable and sustainable.",
+	Healthcare:
+		"The demand for remote healthcare is getting more crucial than ever even as CPSs are making spectacular advancements in this sector. It is piloting technologies and software to address challenging healthcare issues and revolutionizing how myriad healthcare issues are tackled. The CPS healthcare ecosystem has evolved in telemedicine, connected-health, mobile-health and intelligent health in the last two decades. Healthcare-Cyber Physical Systems (H-CPS) networks are available anywhere, anytime and to anyone with the means to digital access. Yet, they are to be rigorously explored and are a matter of high research interest.",
+	"Cyber Security":
+		"CPSs are closely integrated physical processes for networking, computation, feedback loops and comprise several tiny devices with sensing, computing and wireless communication capabilities. These enhanced functionality, automation, and connectivity also bring significant cybersecurity challenges to the CPS. Moreover,  extensive connectivity makes CPS vulnerable to cyber threats and attacks, making safety, security and privacy essential research issues.",
+	Wearables:
+		"The recent spectacular progress in Sensor technologies and allied materials, internet of Things (IoT), Informations and Technology (ICT) and microelectronic fabrication techniques have created a significant stimulus towards the development of smart wearable devices. As a result, this sector is witnessing an explosive growth offering huge market and research opportunities. Wearable devices are complex systems of sensors and cross-domain communication networks handling large amounts of data with real-time decision-making capabilities. In addition, they provide continuous autonomous service over a long period. Therefore, rigorous research in computing and design technologies is required to adequately overcome these challenges to satisfy the stringent demands of wearable devices.",
+};
 ---
 
 <!doctype html>
@@ -20,90 +35,36 @@ import apply from "../assets/index-page/apply.png";
 			description={SITE_DESCRIPTION}
 		/>
 	</head>
-	<body>
-		<Header />
-		<Carousal />
-		<main>
-			<section
-				class="relative mx-auto max-w-[80%] min-h-32"
-				id="floating-section">
-				<div
-					class="md:absolute bottom-0 left-0 right-0 bg-white md:flex md:flex-row flex-col justify-around items-center top-[-60pt] rounded-lg w-full shadow-md">
-					<div class="flex items-center justify-center p-8 flex-1">
-						<Image
-							src={cranium}
-							alt="Human Centered Systems"
-							class="w-16 h-16 mb-2 md:mb-0 md:mr-4"
-						/>
-						<span class="p-4 text-2xl font-semibold text-gray-800 text-center"
-							>Human Centered Systems</span
-						>
+	<body class="bg-gray-300 min-h-screen">
+		<div class="flex flex-col h-screen justify-between">
+			<Header />
+			<main class="mb-auto mt-4 sm:mt-8">
+				<section>
+					<div class="bg-[#a0034c] w-[95%] sm:w-[98%] mx-auto rounded-md p-2 sm:p-4">
+						<div class="grid sm:grid-cols-5">
+							<div class="sm:col-span-3 h-full">
+								<Carousal />
+							</div>
+							<div class="sm:col-span-2 pt-4 mt-4">
+								<div class="h-full flex flex-col justify-center items-center">
+									<h2
+										class="text-white font-bold text-xl sm:text-4xl leading-5 sm:leading-4">
+										About the Lab
+									</h2>
+									<p class="text-justify px-4 m-4 text-gray-300">
+										{about_text}
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="w-full md:w-px bg-gray-300 md:self-stretch my-2 md:my-0 md:mx-2">
-					</div>
-					<div class="flex items-center justify-center p-8 flex-1">
-						<Image
-							src={heart}
-							alt="Healthcare"
-							class="w-20 h-20 mb-2 md:mb-0 md:mr-4"
-						/>
-						<span class="p-4 text-2xl font-semibold text-gray-800">Healthcare</span>
-					</div>
-					<div class="w-full md:w-px bg-gray-300 md:self-stretch my-2 md:my-0 md:mx-2">
-					</div>
-					<div class="flex items-center justify-center p-8 flex-1">
-						<Image
-							src={lock}
-							alt="Security"
-							class="w-20 h-20 mb-2 md:mb-0 md:mr-4"
-						/>
-						<span class="p-4 text-2xl font-semibold text-gray-800">Security</span>
-					</div>
-					<div class="w-full md:w-px bg-gray-300 md:self-stretch my-2 md:my-0 md:mx-2">
-					</div>
-					<div class="flex items-center justify-center p-8 flex-1">
-						<Image
-							src={jacket}
-							alt="Wearables"
-							class="w-[3.35rem] h-[3.35rem] mb-2 md:mb-0 md:mr-4"
-						/>
-						<span class="p-4 text-2xl font-semibold text-gray-800">Wearables</span>
-					</div>
-				</div>
-			</section>
-			<section
-				class="flex flex-col items-center justify-center mx-4 md:mx-12 rounded"
-				id="apply-section">
-				<div class="m-4 md:m-8 shadow-lg flex flex-col md:flex-row rounded overflow-hidden">
-					<div class="p-0 m-0 w-full md:w-1/2">
-						<Image
-							src={apply}
-							alt="Application for CPS"
-							class="w-full h-full object-cover"
-						/>
-					</div>
-					<div
-						class="bg-[#910052] text-white flex flex-col justify-center items-center px-4 md:px-8 py-8 md:py-0 w-full md:w-1/2">
-						<h2 class="text-2xl md:text-4xl font-bold text-center">
-							Apply for Research Internship
-						</h2>
-						<h4 class="text-lg md:text-xl text-gray-400 pt-4 text-center">
-							Applications are now open
-						</h4>
-						<p class="text-white p-4 md:p-8 text-center">
-							We provide our interns experiences that enable them to develop
-							data-backed research aptitude towards new and exciting domains.
-						</p>
-						<button
-							class="bg-gray-200 px-6 md:px-8 py-3 md:py-4 m-4 md:m-8 text-lg md:text-xl text-[#910052] font-bold hover:bg-gray-500 hover:bg-opacity-80 hover:text-gray-100 rounded-lg transition duration-300"
-							disabled
-							>Apply Now</button
-						>
-					</div>
-				</div>
-			</section>
-		</main>
+				</section>
 
-		<Footer />
+				<section class="my-2">
+					<div class="bg-white w-[95%] sm:w-[98%] mx-auto min-h-20 rounded-md"></div>
+				</section>
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>

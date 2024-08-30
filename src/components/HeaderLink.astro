@@ -14,15 +14,10 @@ const { href, isActive = false } = Astro.props;
 			"pb-1",
 			"transition-colors duration-200 text-xl font-semibold text-white hover:scale-105",
 			isActive ?
-				"md:text-[#910052] md:border-b-4 md:border-[#910052]"
-			:	"md:text-gray-700 hover:text-[#910052] hover:md:border-b-4 border-[#910052] text-opacity-65",
+				"scale-105 md:text-[#910052] md:border-b-2 md:border-[#910052]"
+			:	"md:text-gray-700 hover:text-[#910052] hover:md:border-b-2 border-[#910052] text-opacity-65",
 		]}>
 		<slot />
 	</a>
-	<hr
-		class:list={[
-			"pt-2 pb-0 block md:hidden w-full",
-			isActive ? "border-red-800 border-2" : "border-gray-400",
-		]}
-	/>
+	<hr class:list={["pt-2 pb-0 block md:hidden w-full"]} />
 </li>
