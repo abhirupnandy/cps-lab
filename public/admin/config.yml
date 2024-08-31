@@ -41,12 +41,12 @@ collections:
         ] }
       - { label: "Abstract", name: "abstract", widget: "markdown" }
       - { label: "Link", name: "link", widget: "string" }
-  - name: "projects"
-    label: "Projects"
-    folder: "src/content/projects"
+  - name: "events"
+    label: "Events"
+    folder: "src/content/events"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "MMM D YYYY" }
+      - { label: "Location", name: "location", widget: "string" }
       - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Featured Image", name: "heroImage", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
