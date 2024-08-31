@@ -14,6 +14,9 @@ export default {
             colors: {
                 'accent-1': '#333',
             },
+			fontFamily: {
+				poppins: ['Poppins', 'sans-serif'],
+			},
         },
 	},
 	plugins: [

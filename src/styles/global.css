@@ -4,10 +4,10 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-	--accent: #910052;
+	--accent: #A0034C;
 	--accent-dark: #DB328F;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
@@ -45,8 +45,9 @@
     font-style: normal;
     font-display: swap;
 }
+
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -138,10 +139,10 @@ blockquote {
 	margin: 0px;
 	font-size: 1.333em;
 }
-hr {
+/* hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
-}
+} */
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;

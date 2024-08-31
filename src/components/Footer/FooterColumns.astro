@@ -1,0 +1,61 @@
+---
+
+
+interface Props {
+  title?: string;  // Optional title
+  description?: string;  // Optional description
+  image?: string;  // Optional image URL
+  imageAltText?: string;  // Optional alt text for the image
+  urlList?: { 
+    text: string;  // Text for the link
+    href: string;  // URL for the link
+    svgIcon?: string;  // Optional SVG icon URL
+    imgIcon?: string;  // Optional image icon URL
+    faIcon?: string;  // Optional Font Awesome icon class
+    iconAltText?: string;  // Optional alt text for SVG or image icons
+  }[];
+  additionalHtml?: string;  // Optional additional HTML content
+}
+
+const {
+	title,
+	description,
+	image,
+	imageAltText = "Default alt text",
+	urlList = [],
+	additionalHtml = ""
+  }: Props = Astro.props;
+  ---
+
+<div class=" text-sm px-8 py-8 font-poppins font-normal flex flex-col gap-1 ">
+
+	{image && <img src={ image } alt={ imageAltText } class="pb-2"/> }
+
+	{description && <div class=" text-gray-500 text-base leading-[27px]" set:html= { description }></div>}
+
+	{title && <div class=" text-gray-200 text-semibold text-base leading-[27px]">{title}</div>}
+	
+	<hr class="h-[2px] mb-2" />
+
+	{urlList.length > 0 && (
+		<ul class="font-poppins font-normal text-gray text-base leading-[16px]"> 
+		{urlList.map((item) => (
+			<li class="flex items-center ">
+			{item.svgIcon && <img src={item.svgIcon} alt={item.iconAltText || 'SVG Icon'} width="16" height="16" class="mr-2" />}
+			{item.imgIcon && <img src={item.imgIcon} alt={item.iconAltText || 'Image Icon'} width="16" height="16" class="mr-2" />}
+			{item.faIcon && <i class={`fa ${item.faIcon} mr-2 text-gray-100 `}></i>}
+			<a href={item.href} target="_blank" class="hover:text-gray-100  text-[#8D8D8D] font-poppins font-normal text-sm leading-[27px] ">{item.text}</a>
+			</li>
+		))}
+		</ul>
+  )}
+  
+
+
+  {additionalHtml && <div>{additionalHtml}></div>}
+
+
+</div>
+
+
+
