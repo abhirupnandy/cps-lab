@@ -20,3 +20,33 @@ collections:
       - { label: "Featured Image", name: "heroImage", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "people"
+    label: "People"
+    folder: "src/content/people"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
+      - { label: "Photo", name: "photo", widget: "image" }
+  - name: "publications"
+    label: "Publications"
+    folder: "src/content/publications"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Authors", name: "authors", widget: "list", fields: [
+          { label: "Name", name: "name", widget: "string" },
+          { label: "Affiliation", name: "affiliation", widget: "string" }
+        ] }
+      - { label: "Abstract", name: "abstract", widget: "markdown" }
+      - { label: "Link", name: "link", widget: "string" }
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Featured Image", name: "heroImage", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
