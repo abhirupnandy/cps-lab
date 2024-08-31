@@ -4,6 +4,28 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Carousal from "../components/Carousal.astro";
+import Tab from "../components/Tab.astro";
+import { Image } from "astro:assets";
+import cranium from "../assets/index-page/cranium.png";
+import heart from "../assets/index-page/heart.png";
+import jacket from "../assets/index-page/jacket.png";
+import lock from "../assets/index-page/lock.png";
+import apply from "../assets/index-page/apply.png";
+import News from "../components/News.astro";
+
+var about_text =
+	"The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS) The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.";
+
+var accordian_data = {
+	"Human Centered Systems":
+		"Cyberization is all pervasive today with technology-driven engineering systems having a significant presence in almost all spheres of life. In fact, with each passing year, they are evolving at a very fast pace in terms of AI, computational capacities and their scope of use. While they offer numerous benefits to society on one hand, the current state of cyberization is creating an intellectual challenge to envision, design and research Human-Centered Systems for the future. Since human-centered systems integrate CPS with various social units – organizations, communities and distinctive social processes and practices; our lab envisions meeting the research challenges of making them more usable and sustainable.",
+	Healthcare:
+		"The demand for remote healthcare is getting more crucial than ever even as CPSs are making spectacular advancements in this sector. It is piloting technologies and software to address challenging healthcare issues and revolutionizing how myriad healthcare issues are tackled. The CPS healthcare ecosystem has evolved in telemedicine, connected-health, mobile-health and intelligent health in the last two decades. Healthcare-Cyber Physical Systems (H-CPS) networks are available anywhere, anytime and to anyone with the means to digital access. Yet, they are to be rigorously explored and are a matter of high research interest.",
+	"Cyber Security":
+		"CPSs are closely integrated physical processes for networking, computation, feedback loops and comprise several tiny devices with sensing, computing and wireless communication capabilities. These enhanced functionality, automation, and connectivity also bring significant cybersecurity challenges to the CPS. Moreover,  extensive connectivity makes CPS vulnerable to cyber threats and attacks, making safety, security and privacy essential research issues.",
+	Wearables:
+		"The recent spectacular progress in Sensor technologies and allied materials, internet of Things (IoT), Informations and Technology (ICT) and microelectronic fabrication techniques have created a significant stimulus towards the development of smart wearable devices. As a result, this sector is witnessing an explosive growth offering huge market and research opportunities. Wearable devices are complex systems of sensors and cross-domain communication networks handling large amounts of data with real-time decision-making capabilities. In addition, they provide continuous autonomous service over a long period. Therefore, rigorous research in computing and design technologies is required to adequately overcome these challenges to satisfy the stringent demands of wearable devices.",
+};
 ---
 
 <!doctype html>
@@ -15,6 +37,7 @@ import Carousal from "../components/Carousal.astro";
 			description={SITE_DESCRIPTION}
 		/>
 	</head>
+<<<<<<< HEAD
 	<body>
 		<Header />
 		<Carousal />
@@ -55,5 +78,47 @@ import Carousal from "../components/Carousal.astro";
 			</p>
 		</main>
 		<Footer />
+=======
+	<body class="bg-gray-300 min-h-screen">
+		<div class="flex flex-col h-screen justify-between">
+			<Header />
+			<main class="mb-auto mt-4 sm:mt-8">
+				<section>
+					<div class="bg-[#a0034c] w-[95%] sm:w-[98%] mx-auto rounded-md p-2 sm:p-4">
+						<div class="grid sm:grid-cols-5">
+							<div class="sm:col-span-3 h-full">
+								<Carousal />
+							</div>
+							<div class="sm:col-span-2 pt-4 mt-4">
+								<div class="h-full flex flex-col justify-center items-center">
+									<h2
+										class="text-white font-bold text-xl sm:text-4xl leading-5 sm:leading-4">
+										About the Lab
+									</h2>
+									<p class="text-justify px-4 m-4 text-gray-300">
+										{about_text}
+									</p>
+									<!-- News Section -->
+									<h2
+										class="text-white font-bold text-lg sm:text-2xl leading-5 sm:leading-4 mt-4">
+										Latest News
+									</h2>
+									<div
+										class="bg-gray-400 min-h-20 w-full max-w-[85%] m-4 rounded-sm">
+										<News />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="my-2">
+					<div class="bg-white w-[95%] sm:w-[98%] mx-auto min-h-20 rounded-md"></div>
+				</section>
+			</main>
+			<Footer />
+		</div>
+>>>>>>> 97fafe5069f9e4917fa1213795d67fede1e53515
 	</body>
 </html>

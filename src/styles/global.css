@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -169,3 +170,5 @@ blockquote {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+=======
+>>>>>>> 97fafe5069f9e4917fa1213795d67fede1e53515

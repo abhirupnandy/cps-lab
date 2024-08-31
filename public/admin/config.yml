@@ -1,0 +1,52 @@
+media_folder: "src/assets/blog_images" # Location where files will be stored in the repo
+public_folder: "src/assets/blog_images" # The src attribute for uploaded media
+# when using the default proxy server port
+backend:
+  name: git-gateway
+local_backend:
+  # when using a custom proxy server port
+  url: http://localhost:8081/api/v1
+  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
+  allowed_hosts: ['127.0.0.1']
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "src/content/blog" # The path to the folder where the documents are stored
+
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime", format: "MMM D YYYY" }
+      - { label: "Featured Image", name: "heroImage", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "people"
+    label: "People"
+    folder: "src/content/people"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
+      - { label: "Photo", name: "photo", widget: "image" }
+  - name: "publications"
+    label: "Publications"
+    folder: "src/content/publications"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Authors", name: "authors", widget: "list", fields: [
+          { label: "Name", name: "name", widget: "string" },
+          { label: "Affiliation", name: "affiliation", widget: "string" }
+        ] }
+      - { label: "Abstract", name: "abstract", widget: "markdown" }
+      - { label: "Link", name: "link", widget: "string" }
+  - name: "events"
+    label: "Events"
+    folder: "src/content/events"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "MMM D YYYY" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }

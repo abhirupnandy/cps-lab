@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import cypsiLogo from "/public/assets/cypsi_lab_logo.png";
+import cypsiLogo from "../assets/cypsi_lab_logo.png";
 import HeaderLink from "./HeaderLink.astro";
 
 const currentPath = Astro.url.pathname;
 ---
 
 <header
-	class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 md:py-8 transition-all duration-300 z-50"
+	class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 sm:py-8 transition-all duration-300 z-50"
 	id="main-header">
 	<nav class="container mx-auto px-4 flex justify-between items-center">
 		<a
@@ -16,13 +16,13 @@ const currentPath = Astro.url.pathname;
 			<Image
 				src={cypsiLogo}
 				alt="CyPSi Laboratory Logo"
-				class="h-16 w-auto transition-all duration-300 md:h-16"
+				class="h-16 w-auto transition-all duration-300 sm:h-16"
 				id="header-logo"
 			/>
 		</a>
 		<button
 			id="menu-toggle"
-			class="md:hidden z-50">
+			class="sm:hidden z-50">
 			<span class="sr-only">Toggle menu</span>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -40,9 +40,15 @@ const currentPath = Astro.url.pathname;
 		</button>
 		<div
 			id="sidebar"
+<<<<<<< HEAD
 			class="fixed top-0 right-0 bottom-0 w-64 bg-gray-700 md:bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:relative md:transform-none md:shadow-none md:w-auto px-0 md:px-6">
 			<div class="block md:hidden py-6"></div>
 			<ul class="flex flex-col gap-4 space-y-8 p-6 md:flex-row md:space-y-0 md:space-x-6 md:p-0">
+=======
+			class="fixed top-0 right-0 bottom-0 w-64 bg-gray-700 sm:bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out sm:relative sm:transform-none sm:shadow-none sm:w-auto px-0 sm:px-6">
+			<div class="block sm:hidden py-6"></div>
+			<ul class="flex flex-col space-y-8 p-6 sm:flex-row sm:space-y-0 sm:space-x-6 sm:p-0">
+>>>>>>> 97fafe5069f9e4917fa1213795d67fede1e53515
 				<!-- <hr class="p-0 m-0" /> -->
 				<HeaderLink
 					href="/"
@@ -91,12 +97,12 @@ const currentPath = Astro.url.pathname;
 		const scrollY = window.scrollY;
 
 		if (scrollY > 50) {
-			header.classList.add("md:py-2", "shadow-md");
-			header.classList.remove("md:py-8");
+			header.classList.add("sm:py-2", "shadow-md");
+			header.classList.remove("sm:py-8");
 			logo.classList.add("scale-90");
 		} else {
-			header.classList.remove("md:py-2", "shadow-md");
-			header.classList.add("md:py-8");
+			header.classList.remove("sm:py-2", "shadow-md");
+			header.classList.add("sm:py-8");
 			logo.classList.remove("scale-90");
 		}
 
