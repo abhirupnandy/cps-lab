@@ -11,6 +11,7 @@ import heart from "../assets/index-page/heart.png";
 import jacket from "../assets/index-page/jacket.png";
 import lock from "../assets/index-page/lock.png";
 import apply from "../assets/index-page/apply.png";
+import News from "../components/News.astro";
 
 var about_text =
 	"The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS) The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.";
@@ -54,6 +55,15 @@ var accordian_data = {
 									<p class="text-justify px-4 m-4 text-gray-300">
 										{about_text}
 									</p>
+									<!-- News Section -->
+									<h2
+										class="text-white font-bold text-lg sm:text-2xl leading-5 sm:leading-4 mt-4">
+										Latest News
+									</h2>
+									<div
+										class="bg-gray-400 min-h-20 w-full max-w-[85%] m-4 rounded-sm">
+										<News />
+									</div>
 								</div>
 							</div>
 						</div>
