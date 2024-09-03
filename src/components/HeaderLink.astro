@@ -14,26 +14,12 @@ const { href, isActive = false } = Astro.props;
 			"pb-1",
 			"transition-colors duration-200 font-poppins font-semibold text-[#1E000D] text-base leading-7 hover:scale-105",
 			isActive ?
-<<<<<<< HEAD
-				"md:text-[#A0034C] md:border-b-4 md:border-[#A0034C]"
-			:	"md:text-gray-700 hover:text-[#A0034C] hover:md:border-b-4 border-[#A0034C] text-opacity-65",
-		]}>
-		<slot />
-	</a>
-	<hr
-		class:list={[
-			"pt-4 pb-0 mb-0 block md:hidden w-full",
-			isActive ? "border-red-800 border-2" : "border-gray-400",
-		]}
-	/>
-=======
-				"scale-105 md:text-[#910052] md:border-b-2 md:border-[#910052]"
-			:	"md:text-gray-700 hover:text-[#910052] hover:md:border-b-2 border-[#910052] text-opacity-65",
+				"scale-105 md:text-[#A0034C] md:border-b-2 md:border-[#A0034C]"
+			:	"md:text-gray-700 hover:text-[#A0034C] hover:md:border-b-2 border-[#A0034C] text-opacity-65",
 		]}>
 		<slot />
 	</a>
 	<hr class:list={["pt-2 pb-0 block md:hidden w-full"]} />
->>>>>>> 97fafe5069f9e4917fa1213795d67fede1e53515
 </li>
 
 

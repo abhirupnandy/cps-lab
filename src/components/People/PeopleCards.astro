@@ -1,0 +1,59 @@
+---
+interface Props {
+  name: string;  //
+  designation: string;
+  qualification: string;
+  description?: string; // Optional description
+  category: string; // This will categorise ... // need to implement a check in the md file
+  imageList?:
+  {
+    imagename: string;
+    imageAltText?: string;  // Optional alt text for the image
+  }[];  // Optional image URL
+  
+  socialList?: { 
+    text?: string;  // Text for the link
+    href: string;  // URL for the link
+    svgIcon?: string;  // Optional SVG icon URL
+    imgIcon?: string;  // Optional image icon URL
+    faIcon?: string;  // Optional Font Awesome icon class
+    iconAltText?: string;  // Optional alt text for SVG or image icons
+  }[];
+  additionalHtml?: string;  // Optional additional HTML content
+}
+
+const { imageList = [],  
+        name = "Person Name", 
+        designation = "Professor", 
+        qualification = "Ph.D., University of Delhi", 
+        description = "Sanjeev Singh, Ph.D. (University of Delhi, 1997), has over 20 years of experience teaching M.Sc. Informatics and specializes in networks, security, and communication technologies, with 70+ research publications.", 
+        socialList = [] , 
+        category = "Faculty Members",
+        additionalHtml = "",
+    } :Props = Astro.props
+        
+// const AllPeople = await Astro.glob("../content/")/
+
+---
+
+        <div class='member-card'>
+            <img class='img' src={`{image}`} /> 
+            <p class='name'>{name}</p>
+            <p class='category'>{category}</p>
+            <p class='qualification'>{qualification}</p>
+        </div>
+        
+
+<style>
+.member-card {
+  @apply h-[25rem] w-80 flex flex-col justify-center m-[15px] p-2.5 border-b-[3px] border-b-[solid];
+}
+
+.name {
+  @apply text-[#192f59] text-xl font-bold;
+}
+.category {
+  @apply text-[15px] font-[550] text-[gray] mb-[1.2rem];
+}
+
+</style>

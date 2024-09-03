@@ -1,6 +1,8 @@
 ---
+import PeopleCards from "../components/People/PeopleCards.astro";
+import PeopleCategory from "../components/People/PeopleCategory.astro";
 import Layout from "../layouts/BlogPost.astro";
-import PeopleCards from 
+
 ---
 
 <Layout
@@ -9,9 +11,7 @@ import PeopleCards from
 	pubDate={new Date("August 08 2021")}
 	heroImage="/blog-placeholder-about.jpg">
 
-	<PeopleCards>
-
-	</PeopleCards>
-
+	<PeopleCategory />
 
 </Layout>
+
