@@ -12,10 +12,10 @@ const { href, isActive = false } = Astro.props;
 		href={href}
 		class:list={[
 			"pb-1",
-			"transition-colors duration-200 font-poppins font-semibold text-[#1E000D] text-base leading-7 hover:scale-105",
+			"transition-colors duration-200 font-poppins font-semibold text-[var(--accent-dark)] text-base leading-7 hover:scale-105",
 			isActive ?
 				"scale-105 md:text-[#A0034C] md:border-b-2 md:border-[#A0034C]"
-			:	"md:text-gray-700 hover:text-[#A0034C] hover:md:border-b-2 border-[#A0034C] text-opacity-65",
+			:	"md:text-[var(--gray-dark)] hover:text-[#A0034C] hover:md:border-b-2 border-[#A0034C] text-opacity-65",
 		]}>
 		<slot />
 	</a>

@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import logo_cypsi_white from "../assets/lab-Identity/logo_cypsi_white.png";
+
+import CPSLogoWhite from "../assets/lab-Identity/logo_cypsi_white.png";
 import { SITE_TITLE } from "../consts";
 import FooterColumns from "./Footer/FooterColumns.astro";
 import FooterCopyright from "./Footer/FooterCopyright.astro";
@@ -37,17 +38,19 @@ const urlSocials2= [
 ---
 
 
-<footer class="w-full bg-[#181818] flex items-stretch flex-col justify-center">
+<footer class="w-full bg-[#181818] flex items-stretch flex-col justify-center ">
 
-		<div class=" text-xs w-full flex flex-row justify-center items-stretch place-content-stretch md:px-[8%]">
+		<div class="flex flex-col md:flex-row justify-center 
+		items-stretch md:px-[8%] ">
 
 		<FooterColumns 
-			image = "../assets/logo_cypsi_white.png"
+			image = { CPSLogoWhite.src }
 			imageAltText = "CyPSi - Logo - white"
-			description = `Institute of Informatics &amp; Communication<br>
-							University of Delhi South Campus<br>
+			description = `<div class="text-sm">Institute of Informatics &amp; Communication<br>
+							University of Delhi
+							South Campus<br>
 							Delhi – 110021<br>
-							<a style="font-size: 15px; padding-bottom:16px; color: #ffffff;" href="mailto:cps@south.du.ac.in">cps@south.du.ac.in</a>`, 
+							<a class="text-sm my-4 text-[#ffffff]" href="mailto:cps@south.du.ac.in">cps@south.du.ac.in</a> </div>`, 
 		/>
 
 		<FooterColumns 

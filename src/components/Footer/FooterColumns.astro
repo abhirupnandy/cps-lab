@@ -1,6 +1,5 @@
 ---
 
-
 interface Props {
   title?: string;  // Optional title
   description?: string;  // Optional description
@@ -28,11 +27,11 @@ const {
 
   ---
 
-<div class=" text-sm px-8 py-2 font-poppins basis-1/4 font-normal flex flex-col gap-1 justify-start first:border-l-0 border-l-2 border-[#363636] h-full my-4 flex-grow ">
+<div class=" text-xs px-8 py-2 font-poppins basis-1/4 font-normal flex flex-col items-stretch gap-1 justify-start lg:first:border-l-0 lg:border-l-2 lg:border-[#363636] h-full my-4 flex-grow xs:border-0">
 
-	{image && <img src={ image } alt={ imageAltText } class="pb-2"/> }
+	{image && <img src={ image } alt={ imageAltText } class=" mx-auto w-[100px] pb-2"/> }
 
-	{description && <div class=" text-gray-500 text-base leading-[27px]" set:html= { description }></div>}
+	{description && <div class=" text-gray-500 text-base leading-[27px]" set:html={ description }></div>}
 
 	{title && <div class=" text-gray-200 text-semibold text-base leading-[27px]">{title}</div>}
 	
@@ -41,19 +40,20 @@ const {
 	{urlList.length > 0 && (
 		<ul class="font-poppins font-normal text-gray text-base leading-[16px]"> 
 		{urlList.map((item) => (
-			<li class="flex items-center hover:text-gray-100 text-[#8D8D8D]">
-			{item.svgIcon && <img src={item.svgIcon} alt={item.iconAltText || 'SVG Icon'} width="16" height="16" class="mr-2" />}
-			{item.imgIcon && <img src={item.imgIcon} alt={item.iconAltText || 'Image Icon'} width="16" height="16" class="mr-2" />}
-			{item.faIcon && <i class={`fa ${item.faIcon} mr-2 `}></i>}
-			<a href={item.href} target="_blank" class="  text-[#8D8D8D] font-poppins font-normal text-sm leading-[27px] ">{item.text}</a>
+			<li class="flex items-center  text-[#8D8D8D]">
+				<a href={item.href} target="_blank" class="  hover:text-gray-100 text-[#8D8D8D] font-poppins font-normal text-sm leading-[27px] ">
+					{item.svgIcon && <img src={item.svgIcon} alt={item.iconAltText || 'SVG Icon'} width="16" height="16" class="mr-2" />}
+					{item.imgIcon && <img src={item.imgIcon} alt={item.iconAltText || 'Image Icon'} width="16" height="16" class="mr-2" />}
+					{item.faIcon && <i class={`fa ${item.faIcon} mr-2 `}></i>}
+					{item.text}
+				</a>
 			</li>
+
 		))}
 		</ul>
   )}
-  
 
-
-  {additionalHtml && <div>{additionalHtml}></div>}
+  {additionalHtml && <div >{additionalHtml}></div>}
 
 
 </div>

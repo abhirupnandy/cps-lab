@@ -28,25 +28,26 @@ const {
 // const AllPeople = await Astro.glob("../content/")/
 
 ---
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 my-2">
-<div class=' card flex flex-wrap md:flex-row p-6 gap-4 border rounded-sm shadow-sm hover:shadow-md xs:flex-col h-full'>
+
+<div class=' card flex items-center md:flex-row p-6 gap-4 border-dashed rounded-lg shadow-lg hover:shadow-md xs:flex-col '>
         
   <div class=' image-container w-full h-auto max-w-[200px] mx-auto'>
     <img class=' object-contain w-full h-auto ' src={img} alt={ imgAlt } />
     {/* <img class='basis-[1/3] border-r-[50%]' src={`{image}`} />  */}
   </div>
 
-  <div class=' flex flex-col gap-2'>
+  <div class=' flex flex-col gap-2 mx-auto w-full'>
+     <!-- w-full -->
     
-    <div class='details flex flex-col'>
+    <div class='details flex flex-col items-center'>
       <p class='text-[#192f59] text-xl font-bold uppercase'>{ name } </p>
       <hr class="w-full"/>
-      
       {  designation && <p class='designation font-semibold text-sm text-[#7A7A7A]'>{ designation }</p>}
       <p class='qualification text-sm text-[#7A7A7A] font-normal'>{ qualification }</p>
     </div>
 
-    <div class='socials flex gap-2 flex-wrap mt-1'>
+    <div class='socials flex gap-2 flex-wrap mx-auto'>
+      <!-- mx-auto -->
 
       { 
        LinkedIn &&    
@@ -142,15 +143,14 @@ const {
       }
         </div>
 
-        { description && <p class="description text-xs text-ellipsis mt-1">{ description }</p>}
       </div>
   </div>
-</div>
 
 
 <style>
 
 .social-button {
+
   border: none; /* Remove border */
   padding: 0; /* Remove padding */
   width: 24px; /* Button width */

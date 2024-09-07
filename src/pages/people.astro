@@ -1,5 +1,5 @@
 ---
-import PeopleCards from "../components/People/PeopleCards.astro";
+// import PeopleCards from "../components/People/PeopleCards.astro";
 import PeopleCategory from "../components/People/PeopleCategory.astro";
 import Layout from "../layouts/BlogPost.astro";
 
@@ -11,7 +11,12 @@ import Layout from "../layouts/BlogPost.astro";
 	pubDate={new Date("August 08 2021")}
 	heroImage="/blog-placeholder-about.jpg">
 
-	<PeopleCategory />
+	<PeopleCategory CategoryName = "Faculty Members" cardType="1"/>
+	<PeopleCategory CategoryName = "Associated Faculty" cardType="3"/>
+	<PeopleCategory CategoryName = "Research Scholars" cardType="3"/>
+	<PeopleCategory CategoryName = "Research Interns" cardType="2"/>
+	<!-- <PeopleCategory CategoryName = "Employees" cardType="2"/> -->
+
 
 </Layout>
 
