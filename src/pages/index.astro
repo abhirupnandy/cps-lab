@@ -15,6 +15,16 @@ import News from "../components/News.astro";
 import DomainSection from "../components/HomePage/DomainSection";
 import SectionTitle from "../components/SectionTitle.astro";
 
+
+import HeadingStyle1 from "../components/Headings/HeadingStyle1.astro";
+import HeadingStyle2 from "../components/Headings/HeadingStyle2.astro";
+import HeadingStyle3 from "../components/Headings/HeadingStyle2.astro";
+
+import CardType2 from "../components/HomePage/CardType2.astro";
+import CardType4 from "../components/HomePage/CardType4.jsx";
+
+import EventDisplay from "../components/ContentSection/EventDisplay.astro";
+
 var about_text =
 	"The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS) The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.";
 
@@ -28,6 +38,17 @@ var accordian_data = {
 	Wearables:
 		"The recent spectacular progress in Sensor technologies and allied materials, internet of Things (IoT), Informations and Technology (ICT) and microelectronic fabrication techniques have created a significant stimulus towards the development of smart wearable devices. As a result, this sector is witnessing an explosive growth offering huge market and research opportunities. Wearable devices are complex systems of sensors and cross-domain communication networks handling large amounts of data with real-time decision-making capabilities. In addition, they provide continuous autonomous service over a long period. Therefore, rigorous research in computing and design technologies is required to adequately overcome these challenges to satisfy the stringent demands of wearable devices.",
 };
+
+
+
+const CardList2 = [
+  { itemText: 'PhD Programme', itemHref: 'https://www.du.ac.in/', bgImgUrl: 'https://cps.iic.ac.in/wp-content/uploads/2021/08/phd-programme.jpg' }, 
+  { itemText: 'Research Internship', itemHref: 'https://cps.iic.ac.in/joinus', bgImgUrl: 'https://cps.iic.ac.in/wp-content/uploads/2021/08/internship.jpg' }, 
+  { itemText: 'Incubation', itemHref: 'https://www.iic.ac.in/', bgImgUrl: 'https://cps.iic.ac.in/wp-content/uploads/2021/08/project-fellowships.png' }, 
+
+];
+
+
 ---
 
 <!doctype html>
@@ -84,111 +105,34 @@ var accordian_data = {
 
 
 
+
+
 				<section>
-					
-					
-					<div class="flex w-full items-center">
-
-
-					<!-- <SectionTitle SectionTitleText= "Research Domain" StyleType = "2" /> -->
+					<div class="bg-white w-full flex flex-col justify-center min-h-[30rem]">
+					  <div class="flex flex-col gap-14 my-10 items-center mx-auto">
+						<HeadingStyle2 Text="Research Areas" Case="uppercase" ColorHex="var(--accent)" />
 						
-					
-					
-					<div class="flex flex-col justify-start items-center w-[1657px] gap-[57px] px-[42px] pt-12 pb-8 rounded-[3px]">
-						<div class="flex justify-center items-start flex-grow-0 flex-shrink-0 relative gap-[57px]">
-							<div class="flex-grow-0 flex-shrink-0 w-[506px] h-7 relative overflow-hidden border-t-0 border-r-0 border-b-[3.44px] border-l-0 border-[#e6e6e6]"></div>
-								<p class="flex-grow-0 flex-shrink-0 text-[47px] font-bold text-center uppercase text-[#a0034c]">
-									Research Domains
-								</p>
-							<div class="flex-grow-0 flex-shrink-0 w-[506px] h-7 relative overflow-hidden border-t-0 border-r-0 border-b-[3.44px] border-l-0 border-[#e6e6e6]">
-						</div>
-					</div>
-
-
-
-					<div class="flex flex-wrap w-1/2">
-					 
-						
-						
-						<div class=" w-1/2 p-4 my-2 flex justify-center items-center flex-grow-0 flex-shrink-0 h-[760px] gap-2">
-							<div class="group">
-								<div class="flex-grow-0 flex-shrink-0 w-[316.37px] h-[196.01px] relative bg-white group-hover:bg-[#a0034c]">
-										<p class="w-[263.16px] h-[33.13px] absolute left-[26.36px] top-[112.33px] text-[19.486486434936523px] font-bold text-center text-white">
-											<span
-											class="w-[263.16px] h-[33.13px] text-[19.486486434936523px] font-bold text-center text-white group-hover:text=-[#a0034c]"
-											>Human Centered <br />
-											Systems</span
-											>
-										</p>
-									<div class="w-[56.17px] h-[58.11px] absolute left-[128.67px] top-[31.24px] rounded-[37.63px] bg-[url(&#x27;image.jpeg&#x27;)] bg-[length:52.64px_auto] bg-repeat border-[0.56px] border-black"></div>
-								</div>
-							</div>
-
-						
-						<div class=" w-1/2 p-4 my-2 flex justify-center items-center flex-grow-0 flex-shrink-0 h-[760px] gap-2">
-							<div class="group">
-								<div class="flex-grow-0 flex-shrink-0 w-[316.37px] h-[196.01px] relative bg-white group-hover:bg-[#a0034c]">
-										<p class="w-[263.16px] h-[33.13px] absolute left-[26.36px] top-[112.33px] text-[19.486486434936523px] font-bold text-center text-white">
-											<span
-											class="w-[263.16px] h-[33.13px] text-[19.486486434936523px] font-bold text-center text-white group-hover:text=-[#a0034c]"
-											>Human Centered <br />
-											Systems</span
-											>
-										</p>
-									<div class="w-[56.17px] h-[58.11px] absolute left-[128.67px] top-[31.24px] rounded-[37.63px] bg-[url(&#x27;image.jpeg&#x27;)] bg-[length:52.64px_auto] bg-repeat border-[0.56px] border-black"></div>
-								</div>
-							</div>
-						
-					
-								  
-					
-					
-					</div>
-
-
-
-
-
-					  <div
-						class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[736px] relative gap-7"
-					  >
-						<p
-						  class="self-stretch flex-grow-0 flex-shrink-0 w-[736px] text-[32px] font-bold text-left text-[#a0034c]"
-						>
-						  Human Centered Systems
-						</p>
-						<div
-						  class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-4"
-						>
-						  <p
-							class="flex-grow-0 flex-shrink-0 w-[712px] h-[189px] text-[23.108675003051758px] text-left text-[#0a0101]"
-						  >
-							Cyberization is all pervasive today with technology-driven engineering systems having a
-							significant presence in almost all spheres of life. In fact, with each passing year, they
-							are evolving at a very fast pace in terms of AI, computational capacities and their scope
-							of use. 
-						  </p>
-						</div>
-						<p
-						  class="self-stretch flex-grow-0 flex-shrink-0 w-[736px] h-[307px] text-[23.108675003051758px] text-left text-[#0a0101]"
-						>
-						  While they offer numerous benefits to society on one hand, the current state of cyberization
-						  is creating an intellectual challenge to envision, design and research Human-Centered
-						  Systems for the future. Since human-centered systems integrate CPS with various social units
-						  – organizations, communities and distinctive social processes and practices; our lab
-						  envisions meeting the research challenges of making them more usable and sustainable.
-						</p>
-						<p
-						  class="self-stretch flex-grow-0 flex-shrink-0 w-[736px] text-[20.25820541381836px] font-bold text-left text-[#a0034c]"
-						>
-						  Read more >>
-						</p>
+						<CardType4 client:load />
 					  </div>
 					</div>
-				  </div>
-				
-					<!-- <DomainSection /> -->
-				</div>
+				</section>
+				  
+
+				<section>
+					<div class="flex flex-col gap-2 p-2 m-2">
+					<HeadingStyle1 Text="Upcoming Events" Case="uppercase" ColorHex="var(--accent)" class="" />
+					<EventDisplay />
+					</div>
+				</section>
+
+
+				<section>
+					<div class = "bg-[var(--accent)] w-full flex flex-col h-[30rem]  items-center justify-center">
+						<div>
+    					<HeadingStyle1 Text="Collaborate with us" Case="uppercase" ColorHex="#FFFFFF" LineColorHex="#0A0A0A"/>
+						<CardType2 itemList={ CardList2 } />
+						</div>
+					</div>
 				</section>
 
 

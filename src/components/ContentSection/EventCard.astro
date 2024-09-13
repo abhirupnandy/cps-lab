@@ -1,0 +1,6 @@
+---
+const {event} = Astro.props
+---
+
+<!-- <p>{event.frontmatter.title}</p> -->
+ <pre>{JSON.stringify(event.frontmatter, null, 2)}</pre>
