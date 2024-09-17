@@ -24,6 +24,7 @@ import CardType2 from "../components/HomePage/CardType2.astro";
 import CardType4 from "../components/HomePage/CardType4.jsx";
 
 import EventDisplay from "../components/ContentSection/EventDisplay.astro";
+import DomainCardDisplay1 from "../components/HomePage/DomainCardDisplay1.astro";
 
 var about_text =
 	"The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS) The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.";
@@ -107,7 +108,7 @@ const CardList2 = [
 
 
 
-				<section>
+				<!-- <section>
 					<div class="bg-white w-full flex flex-col justify-center min-h-[30rem]">
 					  <div class="flex flex-col gap-14 my-10 items-center mx-auto">
 						<HeadingStyle2 Text="Research Areas" Case="uppercase" ColorHex="var(--accent)" />
@@ -115,13 +116,18 @@ const CardList2 = [
 						<CardType4 client:load />
 					  </div>
 					</div>
-				</section>
+				</section> -->
 				  
+				<section>
+					<!-- component -->
+					 <DomainCardDisplay1 />
+
+				</section>
 
 				<section>
-					<div class="flex flex-col gap-2 p-2 m-2">
-					<HeadingStyle1 Text="Upcoming Events" Case="uppercase" ColorHex="var(--accent)" class="" />
-					<EventDisplay />
+					<div class="flex flex-col p-2 m-2">
+						<HeadingStyle1 Text="Upcoming Events" Case="uppercase" ColorHex="var(--accent)" class="mb-0" />
+						<EventDisplay class="mt-0"/>
 					</div>
 				</section>
 

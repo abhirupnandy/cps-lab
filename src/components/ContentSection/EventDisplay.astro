@@ -6,8 +6,10 @@ const AllEvents = await Astro.glob('../../content/event/*.md');
 ---
 
 
-<div class=" flex flex-start gap-2 justify-center items-center">
-{AllEvents.map((event)=><EventCard {event} />)}
+<div class=" flex flex-start gap-7 justify-center items-stretch p-8 flex-wrap columns-1 sm:columns-2 md:columns-4">
+{AllEvents.map((event)=><EventCard event={event} />)}
 <!-- <EventCard event={AllEvents[0]}  /> -->
 </div>
+
+
  

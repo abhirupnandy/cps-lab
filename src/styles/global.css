@@ -2,7 +2,8 @@
 
 :root {
 	--accent: #A0034C;
-	--accent-hover: #A0034C ;
+	--accent-hover: #6d0536 ;
+	--accent-focus: #f4b3d1 ;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: #a4a4a4;

@@ -2,15 +2,18 @@
 title: 'First Event'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
+pubBy: 'Author Name'
 heroImage: '/blog-placeholder-3.jpg'
 
-eventName: 'Default Name of the Event'
+eventName: 'CPS Plensry Talk - Towards Explainable, Responsoble, and Autonomous Artificial Intelligence'
 eventDate: 'Sep 13 2024'
 eventTime: '2:00 PM IST'
 eventCategory: 'Plenary Talk'
 eventTag: 'default'
-eventDescription: ''
-CardImage: ''
+eventDescription: 'This is the event Description Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+eventCardImage:
+  src: '../../src/assets/Event-images/CPSPlenaryTalkImage.jpg'
+  alt: 'Image description for the event'
 ---
 
 This is Event description
