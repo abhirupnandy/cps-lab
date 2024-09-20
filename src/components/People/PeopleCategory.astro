@@ -17,7 +17,8 @@ const filteredPeople = AllPeople.filter(person => person.frontmatter.category ==
 
 
 
-<div class="flex flex-wrap justify-between">
+<div class="flex flex-wrap justify-stretch items-stretch">
+ <div/>
   {filteredPeople.map((personnel) => (
     cardType === "1" ? (
       <PeopleCards

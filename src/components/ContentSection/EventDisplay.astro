@@ -1,0 +1,17 @@
+---
+import EventCard from "./EventCard.astro";
+
+const AllEvents = await Astro.glob('../../content/event/*.md');
+// console.log(" ~AllEvents", AllEvents );
+
+const { styles } = Astro.props
+---
+
+
+<div class=` flex flex-start gap-12 justify-center items-stretch flex-wrap columns-1 sm:columns-2 md:columns-4 ${ styles }`>
+{AllEvents.map((event)=><EventCard event={event} />)}
+<!-- <EventCard event={AllEvents[0]}  /> -->
+</div>
+
+
+ 

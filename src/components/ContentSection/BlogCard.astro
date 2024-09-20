@@ -1,0 +1,158 @@
+---
+const {blog} = Astro.props
+
+
+// library imports
+import { Image } from 'astro:assets';
+
+
+// utils imports
+import { slugify, formatDate } from "../../js/utils";
+
+// const { title, eventDate, pubBy, eventCardImage, eventDescription, eventCategory, pubDate, url, tagType } = Astro.props;
+
+// const Tag = tagType;
+
+const { title, eventDate, pubBy, eventCardImage, eventName, eventDescription, eventTags, eventCategory, pubDate } = blog.frontmatter;
+
+// component imports
+import Link from "../Buttons/Link.astro";
+import ButtonOutline from '../Buttons/ButtonOutline.astro';
+// import imageee from `${event.frontmatter.eventCardImage.src}`
+
+---
+
+<!-- <p>{event.frontmatter.title}</p> -->
+<!-- <pre>{JSON.stringify(event.frontmatter, null, 2)}</pre> -->
+
+
+
+
+
+
+<div class="event-card items-stretch relative max-w-sm bg-white border border-gray-200 rounded-sm shadow-sm-light dark:bg-gray-800 dark:border-gray-700 group group-hover:shadow-lg">
+    <!-- <a href="#">
+        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+    </a> -->
+    <a class="relative overflow-hidden " href={"#"} aria-hidden="true" tabindex="-1">
+        <img
+          src={eventCardImage.src}
+          alt="alt text for the image"
+          width="400"
+          height="250"
+
+          object-fit="cover"
+          quality={80}
+          aspectRatio="4:1"
+
+          class="object-contain overflow-hidden"
+          
+        >
+        
+        <div class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-40"></div>
+        
+        <!-- <div class="absolute right-5 top-48 py-2 px-2 bg-opacity-90 border-black bg-slate-800 max-w-min rounded-sm flex flex-col justify-center items-center">
+            <p class="text-white uppercase text-xs">month</p>
+            <p class="text-white text-2xl">23</p>
+            <p class="text-sm tracking-wide leading-5 text-white uppercase">time</p>
+        </div> -->
+
+
+      </a>
+
+
+
+    <div class="p-5 flex flex-col items-start gap-2 mb-6">
+        <!-- <p class="px-4 leading-5 bg-slate-300 hover:bg-slate-700 max-w-min rounded-sm text-xs mb-2 text-white uppercase ">tags</p> -->
+        
+        <!-- this could be a tag list -->
+        <!-- <span class="font-semibold min-w-max leading-5 tracking-wide uppercase transition ease-in-out delay-150 hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-[var(--accent)] duration-300 bg-gray-100 text-gray-800 text-xs me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">tag 2</span> -->
+        
+        <span class="mx-2 first:ml-0 last:mr-0 font-bold min-w-max leading-5 tracking-wide uppercase 
+        transition ease-in-out delay-150 
+        
+        text-md      
+        hover:text-[var(--accent)] duration-100 
+         
+        text-gray-800 me-2 py-0.5 rounded 
+        dark:bg-gray-700 dark:text-gray-300">
+        {eventCategory}
+        </span>
+
+        <div class="tags flex flex-row">
+        {eventTags && eventTags.map((tags) => (
+          <span class="mx-2 first:ml-0 last:mr-0 font-semibold min-w-max leading-5 tracking-wide uppercase 
+          transition ease-in-out delay-150 
+          hover:translate-x-1 hover:scale-110 hover:text-[var(--accent)] duration-100 
+          bg-gray-100 
+          text-gray-800 text-xs me-2 px-2.5 py-0.5 rounded 
+          dark:bg-gray-700 dark:text-gray-300">
+          {tags}
+          </span>
+          ))
+        }
+        </div>
+
+        <a href="#">
+          <p class=" text-lg font-bold tracking-tight text-gray-900 dark:text-white transition ease-in-out delay-100 hover:text-[var(--accent)]">{ eventName }</p>
+        </a>
+
+        <a href="#">
+          <p class="text-sm font-poppins font-semibold text-gray-400 hover:translate-x-1 hover:scale-105 hover:text-[var(--accent)] duration-100 ">By Author Name</p>
+        </a>
+        
+      <p class="my-3 text-sm font-normal text-gray-700 dark:text-gray-400 pb-16">{ eventDescription }</p>
+        <!-- <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          Read more
+             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a> -->
+        <!-- <Link href={"#"} text="Read Post" style="secondary" /> -->
+        <!-- <button type="button" class="min-w-max leading-5 tracking-wide transition ease-in-out delay-150 hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-[var(--accent)] duration-300 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"> -->
+        <!-- <button type="button" class="min-w-max leading-5 tracking-wide transition ease-in-out delay-150 hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-[var(--accent)] duration-300 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"> -->
+        <!-- <a type="button" href="#" class="absolute bottom-6 text-white bg-[var(--accent)] hover:bg-[var(--accent-hover)] focus:ring-4 focus:ring-[var(--accent-focus)] font-medium rounded-sm text-sm px-5 py-2.5 me-2 mb-2">
+        Know more
+        </a> -->
+        <div class="flex justify-around mx-auto absolute bottom-8 left-28">
+        <ButtonOutline content="Read Article" class="" />
+      </div>
+    </div>
+</div>
+
+
+
+
+<!-- 
+<div class="card">
+  <small>
+    <a href={`/category/${slugify(eventCategory)}/`} class="badge">{eventCategory}</a>
+  </small>
+  <a href={url} aria-hidden="true" tabindex="-1">
+    <Image
+      src={eventCardImage.src}
+      alt={eventCardImage.alt}
+      width="400"
+      height="250"
+      format="webp"
+      object-fit="cover"
+      quality={80}
+      aspectRatio="4:1"
+    />
+  </a>
+  <div class="content">
+    <div>
+      <Tag class="h3">
+        <a href={url}>{title}</a>
+      </Tag>
+      <small>
+        by <a href={`/author/${slugify(pubBy)}/`}>{pubBy}</a> • {
+          formatDate(pubDate)
+        }
+      </small>
+    </div>
+    <p>{eventDescription}</p>
+    <Link href={url} text="Read Post" style="secondary" />
+  </div>
+</div> -->
+

@@ -15,6 +15,29 @@ import News from "../components/News.astro";
 import DomainSection from "../components/HomePage/DomainSection";
 import SectionTitle from "../components/SectionTitle.astro";
 
+import MotoCard from "../components/HomePage/MotoCard.astro";
+
+import HeadingStyle1 from "../components/Headings/HeadingStyle1.astro";
+import HeadingStyle2 from "../components/Headings/HeadingStyle2.astro";
+import HeadingStyle3 from "../components/Headings/HeadingStyle3.astro";
+
+import CardType2 from "../components/HomePage/CardType2.astro";
+import CardType4 from "../components/HomePage/CardType4.jsx";
+
+import EventDisplay from "../components/ContentSection/EventDisplay.astro";
+
+import ButtonLarge from "../components/Buttons/ButtonLarge.astro";
+import BlogDisplay from "../components/ContentSection/BlogDisplay.astro";
+
+import { getCollection } from 'astro:content';
+import CardDisplay from '../components/HomePage/CardDisplay.jsx';
+
+
+import CPSLogoWhite from "../assets/lab-Identity/logo_cypsi_white.png";
+
+// Load all markdown files in the 'domainsc' collection
+const domains = await getCollection('domainsc');
+
 var about_text =
 	"The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS) The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.";
 
@@ -28,6 +51,17 @@ var accordian_data = {
 	Wearables:
 		"The recent spectacular progress in Sensor technologies and allied materials, internet of Things (IoT), Informations and Technology (ICT) and microelectronic fabrication techniques have created a significant stimulus towards the development of smart wearable devices. As a result, this sector is witnessing an explosive growth offering huge market and research opportunities. Wearable devices are complex systems of sensors and cross-domain communication networks handling large amounts of data with real-time decision-making capabilities. In addition, they provide continuous autonomous service over a long period. Therefore, rigorous research in computing and design technologies is required to adequately overcome these challenges to satisfy the stringent demands of wearable devices.",
 };
+
+
+
+const CardList2 = [
+  { itemText: 'PhD Programme', itemHref: 'https://www.du.ac.in/', bgImgUrl: 'https://cps.iic.ac.in/wp-content/uploads/2021/08/phd-programme.jpg' }, 
+  { itemText: 'Research Internship', itemHref: 'https://cps.iic.ac.in/joinus', bgImgUrl: 'https://cps.iic.ac.in/wp-content/uploads/2021/08/internship.jpg' }, 
+  { itemText: 'Incubation', itemHref: 'https://www.iic.ac.in/', bgImgUrl: 'https://cps.iic.ac.in/wp-content/uploads/2021/08/project-fellowships.png' }, 
+
+];
+
+
 ---
 
 <!doctype html>
@@ -40,157 +74,119 @@ var accordian_data = {
 		/>
 	</head>
 
-	<body class="bg-gray-300 min-h-screen">
+	<body class="bg-white min-h-screen">
 
 		<div class="flex flex-col h-screen justify-between">
 			<Header />
 			<main class="mb-auto mt-4 sm:mt-8">
 				
 				<section>
-					<div class="bg-[#a0034c] w-[95%] sm:w-[98%] mx-auto rounded-md p-2 sm:p-4">
+					<div class="bg-gray-800 w-[95%] sm:w-[98%] mx-auto p-2 sm:p-4">
 						<div class="grid sm:grid-cols-5">
-							<div class="sm:col-span-3 h-full">
+							<div class="sm:col-span-4 h-full">
 								<Carousal />
 							</div>
-							<div class="sm:col-span-2 pt-4 mt-4">
-								<div class="h-full flex flex-col justify-center items-center">
+							<div class="sm:col-span-1 pt-4 mt-4 px-10 ">
+								<div class="h-full flex flex-col items-start justify-end gap-2 pb-8">
+									<img src={ CPSLogoWhite.src } alt="CyPSi - Logo - white" class=" md:scale-[1.75] w-[100px]  mx-auto my-8"/>
 									<h2
-										class="text-white font-bold text-xl sm:text-4xl leading-5 sm:leading-4">
-										About the Lab
+										class="text-white font-poppins font-bold text-lg sm:text-2xl leading-2 sm:leading-2">
+										About us
 									</h2>
-									<p class="text-justify px-4 m-4 text-gray-300">
+									<p class="text-left my-4 text-gray-300 text-xs pr-8">
 										{about_text}
 									</p>
-									<!-- News Section -->
-									<h2
-										class="text-white font-bold text-lg sm:text-2xl leading-5 sm:leading-4 mt-4">
-										Latest News
-									</h2>
-									<div
-										class="bg-gray-400 min-h-20 w-full max-w-[85%] m-4 rounded-sm">
-										<News />
-									</div>
+
+
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-
-
-
-				<section class="my-2">
-					<div class="bg-white w-[95%] sm:w-[98%] mx-auto min-h-20 rounded-md"></div>
+				
+				<section>
+					<!-- News Section -->
+					<h2
+						class="text-white font-bold text-lg sm:text-lg leading-5 sm:leading-4 mt-4">
+						Latest News
+					</h2>
+					<div
+						class="bg-gray-400 min-h-20 w-full max-w-[85%] m-4 rounded-sm">
+						<News />
+					</div>
 				</section>
+
+
 
 
 
 				<section>
-					
-					
-					<div class="flex w-full items-center">
-
-
-					<!-- <SectionTitle SectionTitleText= "Research Domain" StyleType = "2" /> -->
+					<div class="bg-white w-full flex flex-col justify-center min-h-[30rem]">
+					  <div class="flex flex-col gap-14 my-10 items-center mx-auto">
+						<HeadingStyle2 Text="Research Areas" Case="uppercase" ColorHex="var(--accent)" />
 						
-					
-					
-					<div class="flex flex-col justify-start items-center w-[1657px] gap-[57px] px-[42px] pt-12 pb-8 rounded-[3px]">
-						<div class="flex justify-center items-start flex-grow-0 flex-shrink-0 relative gap-[57px]">
-							<div class="flex-grow-0 flex-shrink-0 w-[506px] h-7 relative overflow-hidden border-t-0 border-r-0 border-b-[3.44px] border-l-0 border-[#e6e6e6]"></div>
-								<p class="flex-grow-0 flex-shrink-0 text-[47px] font-bold text-center uppercase text-[#a0034c]">
-									Research Domains
-								</p>
-							<div class="flex-grow-0 flex-shrink-0 w-[506px] h-7 relative overflow-hidden border-t-0 border-r-0 border-b-[3.44px] border-l-0 border-[#e6e6e6]">
-						</div>
-					</div>
+						<CardType4 client:load />
 
-
-
-					<div class="flex flex-wrap w-1/2">
-					 
+						<!-- <DomainCardDisplay1 /> -->
 						
-						
-						<div class=" w-1/2 p-4 my-2 flex justify-center items-center flex-grow-0 flex-shrink-0 h-[760px] gap-2">
-							<div class="group">
-								<div class="flex-grow-0 flex-shrink-0 w-[316.37px] h-[196.01px] relative bg-white group-hover:bg-[#a0034c]">
-										<p class="w-[263.16px] h-[33.13px] absolute left-[26.36px] top-[112.33px] text-[19.486486434936523px] font-bold text-center text-white">
-											<span
-											class="w-[263.16px] h-[33.13px] text-[19.486486434936523px] font-bold text-center text-white group-hover:text=-[#a0034c]"
-											>Human Centered <br />
-											Systems</span
-											>
-										</p>
-									<div class="w-[56.17px] h-[58.11px] absolute left-[128.67px] top-[31.24px] rounded-[37.63px] bg-[url(&#x27;image.jpeg&#x27;)] bg-[length:52.64px_auto] bg-repeat border-[0.56px] border-black"></div>
-								</div>
-							</div>
-
-						
-						<div class=" w-1/2 p-4 my-2 flex justify-center items-center flex-grow-0 flex-shrink-0 h-[760px] gap-2">
-							<div class="group">
-								<div class="flex-grow-0 flex-shrink-0 w-[316.37px] h-[196.01px] relative bg-white group-hover:bg-[#a0034c]">
-										<p class="w-[263.16px] h-[33.13px] absolute left-[26.36px] top-[112.33px] text-[19.486486434936523px] font-bold text-center text-white">
-											<span
-											class="w-[263.16px] h-[33.13px] text-[19.486486434936523px] font-bold text-center text-white group-hover:text=-[#a0034c]"
-											>Human Centered <br />
-											Systems</span
-											>
-										</p>
-									<div class="w-[56.17px] h-[58.11px] absolute left-[128.67px] top-[31.24px] rounded-[37.63px] bg-[url(&#x27;image.jpeg&#x27;)] bg-[length:52.64px_auto] bg-repeat border-[0.56px] border-black"></div>
-								</div>
-							</div>
-						
-					
-								  
-					
-					
-					</div>
+						<!-- Render the CardDisplay component and pass the domains data -->
+						<!-- <CardDisplay domains={domains} /> -->
 
 
-
-
-
-					  <div
-						class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[736px] relative gap-7"
-					  >
-						<p
-						  class="self-stretch flex-grow-0 flex-shrink-0 w-[736px] text-[32px] font-bold text-left text-[#a0034c]"
-						>
-						  Human Centered Systems
-						</p>
-						<div
-						  class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-4"
-						>
-						  <p
-							class="flex-grow-0 flex-shrink-0 w-[712px] h-[189px] text-[23.108675003051758px] text-left text-[#0a0101]"
-						  >
-							Cyberization is all pervasive today with technology-driven engineering systems having a
-							significant presence in almost all spheres of life. In fact, with each passing year, they
-							are evolving at a very fast pace in terms of AI, computational capacities and their scope
-							of use. 
-						  </p>
-						</div>
-						<p
-						  class="self-stretch flex-grow-0 flex-shrink-0 w-[736px] h-[307px] text-[23.108675003051758px] text-left text-[#0a0101]"
-						>
-						  While they offer numerous benefits to society on one hand, the current state of cyberization
-						  is creating an intellectual challenge to envision, design and research Human-Centered
-						  Systems for the future. Since human-centered systems integrate CPS with various social units
-						  – organizations, communities and distinctive social processes and practices; our lab
-						  envisions meeting the research challenges of making them more usable and sustainable.
-						</p>
-						<p
-						  class="self-stretch flex-grow-0 flex-shrink-0 w-[736px] text-[20.25820541381836px] font-bold text-left text-[#a0034c]"
-						>
-						  Read more >>
-						</p>
 					  </div>
 					</div>
-				  </div>
-				
-					<!-- <DomainSection /> -->
-				</div>
+				</section>
+				  
+				<!-- <section> -->
+					<!-- component -->
+					 <!-- <DomainCardDisplay1 /> -->
+
+					<!-- Render the CardDisplay component and pass the domains data -->
+					<!-- <CardDisplay domains={domains} /> -->
+
+				<!-- </section> -->
+
+				<section>
+					<div class="flex flex-col gap-8 py-24 m-2 bg-[var(--gray-light)] ">
+						
+						<HeadingStyle1 Text="Upcoming Events" Case="uppercase" ColorHex="var(--accent)" styles="pb-4" />
+						
+						<EventDisplay styles="my-4"/>
+						
+						<ButtonLarge content="View Events" href="#" class="mt-4"/>
+
+						<!-- <BlogDisplay styles="mt-4"/> -->
+						
+					</div>
 				</section>
 
+				<section>
+					<div class="flex flex-col gap-8 py-24 m-2  ">
+						
+						<HeadingStyle3 Text="Lab Articles" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
+						
+						<BlogDisplay styles="my-4"/>
+						
+						<ButtonLarge content="View All Atricles" href="#" class="mt-4"/>
+
+						<!-- <BlogDisplay styles="mt-4"/> -->
+						
+					</div>
+				</section>
+
+
+				<section>
+					<div class = "bg-[var(--gray-light)] w-full flex flex-col h-[30rem]  items-center justify-center">
+						<div class = "flex flex-col gap-8">
+    					<HeadingStyle1 Text="Collaborate with us" Case="uppercase" ColorHex="var(--accent)" LineColorHex="#0A0A0A"/>
+						<CardType2 itemList={ CardList2 } />
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<MotoCard class=""/>
+				</section>
 
 			</main>
 			<Footer />

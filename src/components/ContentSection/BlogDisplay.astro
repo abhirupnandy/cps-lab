@@ -1,0 +1,17 @@
+---
+import BlogCard from "./BlogCard.astro";
+
+const AllBlogs = await Astro.glob('../../content/blogs/*.md');
+// console.log(" ~AllEvents", AllEvents );
+
+const { styles } = Astro.props
+---
+
+
+<div class=` flex flex-start gap-7 justify-center items-stretch flex-wrap columns-1 sm:columns-2 md:columns-4 ${ styles }`>
+{AllBlogs.map((blog)=> <BlogCard blog={blog} />)}
+<!-- <EventCard event={AllEvents[0]}  /> -->
+</div>
+
+
+ 
