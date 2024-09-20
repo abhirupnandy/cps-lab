@@ -1,12 +1,26 @@
-const Card = ({ title, onClick }) => (
-  <div onClick={onClick} className="group p-2 basis-1/2">
-    <div className="flex flex-col gap-4 justify-center items-center py-7 mx-auto bg-gray-100 group-hover:bg-[var(--accent)]">
-      <div className="w-[80px] h-[80px] rounded-full bg-[url('image.jpeg')] bg-[length:52.64px_auto] bg-repeat border-[1px] border-black"></div>
-      <p className="text-[20px] font-bold text-center text-[var(--accent)] group-hover:text-white">
-        {title}
-      </p>
-    </div>
+const Card = ({ title, image, onClick }) => (
+  <div onClick={onClick} 
+  className=" relative group h-48 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md cursor-pointer" >
+      <a className="block">
+            <div className="h-28">
+                <div className="absolute -top-20 lg:top-[-10%] left-[5%] z-40 group-hover:top-[-40%] group-hover:opacity-[0.9] duration-300 w-[90%] h-48 bg-[var(--accent-2)] rounded-xl justify-items-center align-middle">
+                    <img 
+                      src={image}
+                      className="w-36 h-36 mt-6 m-auto" 
+                      alt={title} 
+                      title= {title}
+                      loading="lazy"
+                      width="200" height="200" />
+              </div>
+          </div>
+          <div className="p-6 z-10 w-full">
+              <p className="mb-2 inline-block text-tg text-center w-full text-xl font-sans font-semibold leading-snug tracking-normal antialiased">
+                  {title}
+              </p>
+          </div>
+      </a>
   </div>
-);
+  ); 
 
 export default Card;
+

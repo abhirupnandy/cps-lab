@@ -15,16 +15,28 @@ import News from "../components/News.astro";
 import DomainSection from "../components/HomePage/DomainSection";
 import SectionTitle from "../components/SectionTitle.astro";
 
+import MotoCard from "../components/HomePage/MotoCard.astro";
 
 import HeadingStyle1 from "../components/Headings/HeadingStyle1.astro";
 import HeadingStyle2 from "../components/Headings/HeadingStyle2.astro";
-import HeadingStyle3 from "../components/Headings/HeadingStyle2.astro";
+import HeadingStyle3 from "../components/Headings/HeadingStyle3.astro";
 
 import CardType2 from "../components/HomePage/CardType2.astro";
 import CardType4 from "../components/HomePage/CardType4.jsx";
 
 import EventDisplay from "../components/ContentSection/EventDisplay.astro";
-import DomainCardDisplay1 from "../components/HomePage/DomainCardDisplay1.astro";
+
+import ButtonLarge from "../components/Buttons/ButtonLarge.astro";
+import BlogDisplay from "../components/ContentSection/BlogDisplay.astro";
+
+import { getCollection } from 'astro:content';
+import CardDisplay from '../components/HomePage/CardDisplay.jsx';
+
+
+import CPSLogoWhite from "../assets/lab-Identity/logo_cypsi_white.png";
+
+// Load all markdown files in the 'domainsc' collection
+const domains = await getCollection('domainsc');
 
 var about_text =
 	"The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS) The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.";
@@ -62,85 +74,119 @@ const CardList2 = [
 		/>
 	</head>
 
-	<body class="bg-gray-300 min-h-screen">
+	<body class="bg-white min-h-screen">
 
 		<div class="flex flex-col h-screen justify-between">
 			<Header />
 			<main class="mb-auto mt-4 sm:mt-8">
 				
 				<section>
-					<div class="bg-[#a0034c] w-[95%] sm:w-[98%] mx-auto rounded-md p-2 sm:p-4">
+					<div class="bg-gray-800 w-[95%] sm:w-[98%] mx-auto p-2 sm:p-4">
 						<div class="grid sm:grid-cols-5">
-							<div class="sm:col-span-3 h-full">
+							<div class="sm:col-span-4 h-full">
 								<Carousal />
 							</div>
-							<div class="sm:col-span-2 pt-4 mt-4">
-								<div class="h-full flex flex-col justify-center items-center">
+							<div class="sm:col-span-1 pt-4 mt-4 px-10 ">
+								<div class="h-full flex flex-col items-start justify-end gap-2 pb-8">
+									<img src={ CPSLogoWhite.src } alt="CyPSi - Logo - white" class=" md:scale-[1.75] w-[100px]  mx-auto my-8"/>
 									<h2
-										class="text-white font-bold text-xl sm:text-4xl leading-5 sm:leading-4">
-										About the Lab
+										class="text-white font-poppins font-bold text-lg sm:text-2xl leading-2 sm:leading-2">
+										About us
 									</h2>
-									<p class="text-justify px-4 m-4 text-gray-300">
+									<p class="text-left my-4 text-gray-300 text-xs pr-8">
 										{about_text}
 									</p>
-									<!-- News Section -->
-									<h2
-										class="text-white font-bold text-lg sm:text-2xl leading-5 sm:leading-4 mt-4">
-										Latest News
-									</h2>
-									<div
-										class="bg-gray-400 min-h-20 w-full max-w-[85%] m-4 rounded-sm">
-										<News />
-									</div>
+
+
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-
-
-
-				<section class="my-2">
-					<div class="bg-white w-[95%] sm:w-[98%] mx-auto min-h-20 rounded-md"></div>
+				
+				<section>
+					<!-- News Section -->
+					<h2
+						class="text-white font-bold text-lg sm:text-lg leading-5 sm:leading-4 mt-4">
+						Latest News
+					</h2>
+					<div
+						class="bg-gray-400 min-h-20 w-full max-w-[85%] m-4 rounded-sm">
+						<News />
+					</div>
 				</section>
 
 
 
 
 
-				<!-- <section>
+				<section>
 					<div class="bg-white w-full flex flex-col justify-center min-h-[30rem]">
 					  <div class="flex flex-col gap-14 my-10 items-center mx-auto">
 						<HeadingStyle2 Text="Research Areas" Case="uppercase" ColorHex="var(--accent)" />
 						
 						<CardType4 client:load />
+
+						<!-- <DomainCardDisplay1 /> -->
+						
+						<!-- Render the CardDisplay component and pass the domains data -->
+						<!-- <CardDisplay domains={domains} /> -->
+
+
 					  </div>
 					</div>
-				</section> -->
+				</section>
 				  
-				<section>
+				<!-- <section> -->
 					<!-- component -->
-					 <DomainCardDisplay1 />
+					 <!-- <DomainCardDisplay1 /> -->
 
+					<!-- Render the CardDisplay component and pass the domains data -->
+					<!-- <CardDisplay domains={domains} /> -->
+
+				<!-- </section> -->
+
+				<section>
+					<div class="flex flex-col gap-8 py-24 m-2 bg-[var(--gray-light)] ">
+						
+						<HeadingStyle1 Text="Upcoming Events" Case="uppercase" ColorHex="var(--accent)" styles="pb-4" />
+						
+						<EventDisplay styles="my-4"/>
+						
+						<ButtonLarge content="View Events" href="#" class="mt-4"/>
+
+						<!-- <BlogDisplay styles="mt-4"/> -->
+						
+					</div>
 				</section>
 
 				<section>
-					<div class="flex flex-col p-2 m-2">
-						<HeadingStyle1 Text="Upcoming Events" Case="uppercase" ColorHex="var(--accent)" class="mb-0" />
-						<EventDisplay class="mt-0"/>
+					<div class="flex flex-col gap-8 py-24 m-2  ">
+						
+						<HeadingStyle3 Text="Lab Articles" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
+						
+						<BlogDisplay styles="my-4"/>
+						
+						<ButtonLarge content="View All Atricles" href="#" class="mt-4"/>
+
+						<!-- <BlogDisplay styles="mt-4"/> -->
+						
 					</div>
 				</section>
 
 
 				<section>
-					<div class = "bg-[var(--accent)] w-full flex flex-col h-[30rem]  items-center justify-center">
-						<div>
-    					<HeadingStyle1 Text="Collaborate with us" Case="uppercase" ColorHex="#FFFFFF" LineColorHex="#0A0A0A"/>
+					<div class = "bg-[var(--gray-light)] w-full flex flex-col h-[30rem]  items-center justify-center">
+						<div class = "flex flex-col gap-8">
+    					<HeadingStyle1 Text="Collaborate with us" Case="uppercase" ColorHex="var(--accent)" LineColorHex="#0A0A0A"/>
 						<CardType2 itemList={ CardList2 } />
 						</div>
 					</div>
 				</section>
 
+				<section>
+					<MotoCard class=""/>
+				</section>
 
 			</main>
 			<Footer />

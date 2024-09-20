@@ -10,15 +10,15 @@ interface Props {
 const {itemList=[]}: Props = Astro.props
 ---
 
-<div class=" w-auto flex justify-center ml-[30px] mr-[15px] my-5 xs:flex-col md:flex-row">
+<div class=" flex flex-col my-6 md:flex-row md:align-center">
 
     {itemList.length > 0 && (
         itemList.map((item) => (
         
-        <div class={`card bg-[url(${ item.bgImgUrl })] text-[white] h-[232px] w-[426.66px] no-underline bg-cover bg-center border border-solid border-gray-500 group`}>
+        <div class={`card bg-[url(${ item.bgImgUrl })] flex-1 mx-auto text-[white] no-underline border border-solid border-gray-500 group`}>
             <a href={ item.itemHref } >
-                <div class="h-full w-full bg-[rgba(57,13,40,0.96)] text-center text-[white] group-hover:bg-[rgba(43,24,36,0.53)]">
-                    <div class=" font-poppins text-3xl font-bold pt-24">{item.itemText}</div>
+                <div class=" h-full w-full bg-[rgba(57,13,40,0.96)] text-center text-[white] group-hover:bg-[rgba(97,27,85,0.85)]">
+                    <div class=" font-poppins text-lg md:text-3xl font-bold p-12 md:px-24 md:py-24">{item.itemText}</div>
                 </div>
             </a>
         </div>
