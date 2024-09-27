@@ -16,4 +16,9 @@
 
 *{
     font-family: 'Poppins';
+	/* scrollbar-width: thin;
+	scrollbar-color: var(--accent) var(--accent-focus); */
+	/* scrollbar-width: thin;
+	scrollbar-color: black white;  */
 }
+

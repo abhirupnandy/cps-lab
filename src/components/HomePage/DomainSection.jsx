@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+// This is the old card type not in use
+
 // import parse from "html-react-parser";
 
 // import rd1 from "../assets/ResearchDomainImages/rd1.jpg";

@@ -6,7 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 
-const posts = (await getCollection("blog")).sort(
+const posts = (await getCollection("events")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -31,7 +31,7 @@ const posts = (await getCollection("blog")).sort(
 									index === 0 ? "w-full mb-4 text-center" : "w-[calc(50%-1rem)]"
 								}`}>
 								<a
-									href={`/blog/${post.slug}/`}
+									href={`/events/${post.slug}/`}
 									class="block no-underline transition duration-200 ease-in-out">
 									<img
 										width={720}

@@ -14,9 +14,11 @@ import icon from "astro-icon";
 export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), tailwind(), react(), icon()],
+  output: 'server',
   // vite: {
   //   plugins: [svgLoader()]
   // },
+
   content: {
     // Define the schema for your content collection
     schemas: {
@@ -24,6 +26,7 @@ export default defineConfig({
         type: 'markdown',
         dir: 'content/domainsc',
       },
+      
     },
   },
 });

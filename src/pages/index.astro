@@ -20,6 +20,8 @@ import MotoCard from "../components/HomePage/MotoCard.astro";
 import HeadingStyle1 from "../components/Headings/HeadingStyle1.astro";
 import HeadingStyle2 from "../components/Headings/HeadingStyle2.astro";
 import HeadingStyle3 from "../components/Headings/HeadingStyle3.astro";
+// import HeadingStyle3small from "../components/Headings/HeadingStyle3.astro";
+
 
 import CardType2 from "../components/HomePage/CardType2.astro";
 import CardType4 from "../components/HomePage/CardType4.jsx";
@@ -34,6 +36,8 @@ import CardDisplay from '../components/HomePage/CardDisplay.jsx';
 
 
 import CPSLogoWhite from "../assets/lab-Identity/logo_cypsi_white.png";
+import BlogDisplay2 from "../components/ContentSection/BlogDisplay2.astro";
+import BlogCardFeatured from "../components/ContentSection/BlogCardFeatured.astro";
 
 // Load all markdown files in the 'domainsc' collection
 const domains = await getCollection('domainsc');
@@ -61,6 +65,14 @@ const CardList2 = [
 
 ];
 
+const NewsList = [
+  { date: 'Sept 12, 2024' , href: 'https://www.linkedin.com/feed/update/urn:li:activity:7233332710872653824', text: 'We are thrilled to announce the successful completion of our plenary talk on "Towards Explainable, Responsible, and Autonomous Artificial Intelligence".' }, 
+  { date: 'Aug 10, 2024' , href: 'https://www.linkedin.com/posts/cypsilab_cpslab-innovation-nlp-activity-7234175962504904704-p6nh?utm_source=share&utm_medium=member_desktop', text: 'We are incredibly proud to announce that our research scholar, Tiya Vaj (Vajratiya Vajrabol), has been awarded the Favorable Project Award by the Jury at the Bhasha Techathon 2024!' }, 
+  { date: 'Jul 22, 2024' , href: 'https://www.linkedin.com/feed/update/urn:li:activity:7221106752627359744', text: 'We are thrilled to announce the successful conduction of our workshop on Designing User-Centric Interfaces: Best Practices and Emerging Trends held on July 12, 2024, at CPS Lab.' }, 
+  { date: 'Aug 10, 2024' , href: 'https://www.linkedin.com/posts/cypsilab_cpslab-innovation-nlp-activity-7234175962504904704-p6nh?utm_source=share&utm_medium=member_desktop', text: 'We are incredibly proud to announce that our research scholar, Tiya Vaj (Vajratiya Vajrabol), has been awarded the Favorable Project Award by the Jury at the Bhasha Techathon 2024!' }, 
+  { date: 'Jul 22, 2024' , href: 'https://www.linkedin.com/feed/update/urn:li:activity:7221106752627359744', text: 'We are thrilled to announce the successful conduction of our workshop on Designing User-Centric Interfaces: Best Practices and Emerging Trends held on July 12, 2024, at CPS Lab.' }, 
+
+];
 
 ---
 
@@ -96,55 +108,44 @@ const CardList2 = [
 									<p class="text-left my-4 text-gray-300 text-xs pr-8">
 										{about_text}
 									</p>
-
-
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-				
-				<section>
-					<!-- News Section -->
-					<h2
-						class="text-white font-bold text-lg sm:text-lg leading-5 sm:leading-4 mt-4">
-						Latest News
-					</h2>
-					<div
-						class="bg-gray-400 min-h-20 w-full max-w-[85%] m-4 rounded-sm">
-						<News />
-					</div>
-				</section>
-
-
-
-
 
 				<section>
 					<div class="bg-white w-full flex flex-col justify-center min-h-[30rem]">
-					  <div class="flex flex-col gap-14 my-10 items-center mx-auto">
-						<HeadingStyle2 Text="Research Areas" Case="uppercase" ColorHex="var(--accent)" />
-						
-						<CardType4 client:load />
+						<div class="flex flex-col gap-14 my-10 items-center mx-auto">
+							<HeadingStyle2 Text="Research Areas" Case="uppercase" ColorHex="var(--accent)" />
+							
+							<CardType4 client:load />
 
-						<!-- <DomainCardDisplay1 /> -->
-						
-						<!-- Render the CardDisplay component and pass the domains data -->
-						<!-- <CardDisplay domains={domains} /> -->
-
-
-					  </div>
+							
+						</div>
 					</div>
 				</section>
-				  
-				<!-- <section> -->
-					<!-- component -->
-					 <!-- <DomainCardDisplay1 /> -->
+				
+				<section>
+					<HeadingStyle2 Text="Spotlight" Case="uppercase" ColorHex="var(--accent)" />
+					<div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
+						<div class="grid grid-cols-1 sm:grid-cols-12 gap-8">
+					
+							<div class="sm:col-span-6 lg:col-span-6">
 
-					<!-- Render the CardDisplay component and pass the domains data -->
-					<!-- <CardDisplay domains={domains} /> -->
-
-				<!-- </section> -->
+								<p class="mx-2 text-slate-800 font-semibold text-2xl">Featured Blog</p>
+								<hr class="my-2 ">
+								<BlogCardFeatured />
+							</div>
+					
+							<div class="sm:col-span-6 lg:col-span-6">
+								<p class="mx-2 text-slate-800 font-semibold text-2xl">News & Updates</p>
+								<hr class="my-2 ">
+								<News NewsList= { NewsList } />
+							</div>
+						</div>
+					</div>
+				</section>
 
 				<section>
 					<div class="flex flex-col gap-8 py-24 m-2 bg-[var(--gray-light)] ">
@@ -153,7 +154,7 @@ const CardList2 = [
 						
 						<EventDisplay styles="my-4"/>
 						
-						<ButtonLarge content="View Events" href="#" class="mt-4"/>
+						<ButtonLarge content="View Events" href="/blogs" class="mt-4"/>
 
 						<!-- <BlogDisplay styles="mt-4"/> -->
 						
@@ -165,11 +166,11 @@ const CardList2 = [
 						
 						<HeadingStyle3 Text="Lab Articles" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
 						
-						<BlogDisplay styles="my-4"/>
+						<BlogDisplay2 styles="my-4"/>
 						
-						<ButtonLarge content="View All Atricles" href="#" class="mt-4"/>
+						<ButtonLarge content="View All Atricles" href="/blogs" class="mt-4"/>
 
-						<!-- <BlogDisplay styles="mt-4"/> -->
+						
 						
 					</div>
 				</section>
