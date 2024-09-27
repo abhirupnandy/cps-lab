@@ -1,5 +1,5 @@
 ---
-title: 'First Event'
+title: 'Second Event'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
 pubBy: 'Author Name'

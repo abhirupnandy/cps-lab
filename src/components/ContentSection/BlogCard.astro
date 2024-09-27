@@ -9,16 +9,15 @@ import { Image } from 'astro:assets';
 // utils imports
 import { slugify, formatDate } from "../../js/utils";
 
-// const { title, eventDate, pubBy, eventCardImage, eventDescription, eventCategory, pubDate, url, tagType } = Astro.props;
 
-// const Tag = tagType;
-
-const { title, eventDate, pubBy, eventCardImage, eventName, eventDescription, eventTags, eventCategory, pubDate } = blog.frontmatter;
+const { title, description, pubDate, pubBy, heroImage, blogCategory, blogTags, blogCardImage, readTime} = blog.frontmatter;
 
 // component imports
 import Link from "../Buttons/Link.astro";
 import ButtonOutline from '../Buttons/ButtonOutline.astro';
 // import imageee from `${event.frontmatter.eventCardImage.src}`
+
+
 
 ---
 
@@ -26,28 +25,26 @@ import ButtonOutline from '../Buttons/ButtonOutline.astro';
 <!-- <pre>{JSON.stringify(event.frontmatter, null, 2)}</pre> -->
 
 
-
-
-
-
-<div class="event-card items-stretch relative max-w-sm bg-white border border-gray-200 rounded-sm shadow-sm-light dark:bg-gray-800 dark:border-gray-700 group group-hover:shadow-lg">
+<div class="blog-card items-stretch relative max-w-sm bg-white border border-gray-200 rounded-sm shadow-sm-light dark:bg-gray-800 dark:border-gray-700 group">
     <!-- <a href="#">
         <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
     </a> -->
     <a class="relative overflow-hidden " href={"#"} aria-hidden="true" tabindex="-1">
-        <img
-          src={eventCardImage.src}
-          alt="alt text for the image"
-          width="400"
-          height="250"
+     
+      <img
+      src={blogCardImage.src}
+      alt={blogCardImage.alt}
+      width="400"
+      height="250"
 
-          object-fit="cover"
-          quality={80}
-          aspectRatio="4:1"
+      object-fit="cover"
+      quality={80}
+      aspectRatio="4:1"
 
-          class="object-contain overflow-hidden"
-          
-        >
+      class="object-contain overflow-hidden"
+      
+    >
+
         
         <div class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-40"></div>
         
@@ -58,17 +55,16 @@ import ButtonOutline from '../Buttons/ButtonOutline.astro';
         </div> -->
 
 
+
+
       </a>
 
 
 
     <div class="p-5 flex flex-col items-start gap-2 mb-6">
-        <!-- <p class="px-4 leading-5 bg-slate-300 hover:bg-slate-700 max-w-min rounded-sm text-xs mb-2 text-white uppercase ">tags</p> -->
         
-        <!-- this could be a tag list -->
-        <!-- <span class="font-semibold min-w-max leading-5 tracking-wide uppercase transition ease-in-out delay-150 hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-[var(--accent)] duration-300 bg-gray-100 text-gray-800 text-xs me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">tag 2</span> -->
-        
-        <span class="mx-2 first:ml-0 last:mr-0 font-bold min-w-max leading-5 tracking-wide uppercase 
+        <!-- Category -->
+        <!-- <span class="mx-2 first:ml-0 last:mr-0 font-bold min-w-max leading-5 tracking-wide uppercase 
         transition ease-in-out delay-150 
         
         text-md      
@@ -76,32 +72,45 @@ import ButtonOutline from '../Buttons/ButtonOutline.astro';
          
         text-gray-800 me-2 py-0.5 rounded 
         dark:bg-gray-700 dark:text-gray-300">
-        {eventCategory}
-        </span>
+        { blogCategory }
+        </span> -->
 
+        
         <div class="tags flex flex-row">
-        {eventTags && eventTags.map((tags) => (
-          <span class="mx-2 first:ml-0 last:mr-0 font-semibold min-w-max leading-5 tracking-wide uppercase 
-          transition ease-in-out delay-150 
-          hover:translate-x-1 hover:scale-110 hover:text-[var(--accent)] duration-100 
-          bg-gray-100 
-          text-gray-800 text-xs me-2 px-2.5 py-0.5 rounded 
-          dark:bg-gray-700 dark:text-gray-300">
-          {tags}
-          </span>
-          ))
-        }
-        </div>
+          { blogTags && blogTags.map((tags) => (
+            <span class="mx-2 first:ml-0 last:mr-0 font-semibold min-w-max leading-5 tracking-wide uppercase 
+            transition ease-in-out delay-150 
+            hover:translate-x-1 hover:scale-105 hover:text-[var(--accent)] duration-100 
+            bg-gray-100 
+            text-gray-800 text-xs me-2 px-2 py-0. rounded 
+            dark:bg-gray-700 dark:text-gray-300">
+            { tags }
+            </span>
+            ))
+          }
+          </div>
 
+        
         <a href="#">
-          <p class=" text-lg font-bold tracking-tight text-gray-900 dark:text-white transition ease-in-out delay-100 hover:text-[var(--accent)]">{ eventName }</p>
-        </a>
-
-        <a href="#">
-          <p class="text-sm font-poppins font-semibold text-gray-400 hover:translate-x-1 hover:scale-105 hover:text-[var(--accent)] duration-100 ">By Author Name</p>
+          <p class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white transition ease-in-out delay-100 hover:text-[var(--accent)]">{ title }</p>
         </a>
         
-      <p class="my-3 text-sm font-normal text-gray-700 dark:text-gray-400 pb-16">{ eventDescription }</p>
+        
+          <a href="#">
+            <p class="text-sm font-poppins italic font-semibold text-gray-400 hover:translate-x-1 hover:scale-105 hover:text-[var(--accent)] duration-100 ">By { pubBy }</p>
+          </a>
+        
+
+
+        <div class="flex gap-2 ">
+          <p class="text-sm font-poppins font-semibold text-[var(--accent)]">   { pubDate }</p>
+          <p class="text-sm font-poppins font-semibold text-[var(--accent)]"> | </p>
+          <p class="text-sm font-poppins font-semibold text-[var(--accent)]"> { readTime } Read</p>
+          
+        </div>
+
+
+      <p class="mt-0 my-3 text-sm font-normal text-gray-700 dark:text-gray-400 pb-16">{ description }</p>
         <!-- <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
           Read more
              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

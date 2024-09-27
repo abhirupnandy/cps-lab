@@ -1,60 +1,22 @@
 ---
-
-const { title, bgImg}= Astro.props
-
+const { title, bgImg } = Astro.props
 ---
 
-    <div class="title-wrapper">
-      <div
-        class="title-header"
-        style={{ "--background-image": `url(${bgImg})` }}
-      >
-        <div class="text-wrapper">
-          <h3>{title}</h3>
-        </div>
+
+<div class="w-full">
+  {bgImg && (
+    <div
+      class="relative w-full h-[25rem] max-h-[25rem] overflow-hidden pt-32 bg-no-repeat bg-center bg-cover"
+      style={`background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(${bgImg})`}
+    >
+      {/* <!-- Title Wrapper --> */}
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-[80rem] py-4">
+        <h3 class="text-white font-bold text-5xl font-poppins">
+          {title}
+        </h3>
+      </div>
       </div>
     </div>
-
-<style>
-    .title-wrapper {
-    width: 100%;
-    /* object-fit: cover; */
-  }
-  .title-header {
-    height: 25rem;
-    max-height: 25rem;
-    margin: 0 auto;
-    padding-top: 8rem;
-    width: 100%;
-    max-width: 100%;
-    /* max-width: 80rem; */
-    overflow: hidden; /* Ensures content stays within bounds */
-    position: relative;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
-      var(--background-image);
-    background-size: 100% auto;
-    background-position: center;
-    object-fit: cover;
-    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
-  }
-  
-  .title-header h3 {
-    /* position: absolute; */
-    margin: 0 auto;
-    /* margin-left: 5rem; */
-    color: white;
-    font-weight: bold;
-    /* text-align: center; */
-    font-size: 48px;
-    font-family: "Poppins";
-    /* padding: 10px; */
-  }
-  .text-wrapper {
-    max-width: 80rem;
-    padding-left: 2rem;
-    padding-top: 6rem;
-    margin: 0 auto;
-    /* margin-left: 20rem; */
-  }
-  
-</style>
+  )}
+</div>

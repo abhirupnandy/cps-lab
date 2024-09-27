@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/BlogsPageLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BlogCardLatest from "../../components/ContentSection/BlogCardLatest.astro";
+import BlogCard2 from "../../components/ContentSection/BlogCard2.astro";
+import BlogCardFeatured from "../../components/ContentSection/BlogCardFeatured.astro";
+
+const allBlogArticles: CollectionEntry<'blogs'>[] = (await getCollection('blogs'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Find the most recent article with the "featured" tag
+const featuredArticle = allBlogArticles.find((article) => article.data.blogTags.includes('featured'));
+---
+
+
+<Layout
+	title="Lab Articles"
+	description="Lorem ipsum dolor sit amet"
+	heroImage="blog-placeholder-about.jpg"
+>
+	<section class="w-[80rem] mx-auto flex justify-center">
+		<ul class="flex flex-col md:flex-row flex-start gap-7 items-stretch flex-wrap columns-1 sm:columns-2 md:columns-4 my-8">
+
+
+			{allBlogArticles.map((article, index) => (
+				index === 0 ? (
+					<BlogCardLatest blog={article} slug={`/blogs/${article.slug}`} />
+				) : (
+					<BlogCard2 blog={article} slug={`/blogs/${article.slug}`} />
+				)
+			))}
+		</ul>
+	</section>
+</Layout>

@@ -13,7 +13,7 @@ const Card = ({ title, image, onClick }) => (
                       width="200" height="200" />
               </div>
           </div>
-          <div className="p-6 z-10 w-full">
+          <div className="p-4 z-10 w-full">
               <p className="mb-2 inline-block text-tg text-center w-full text-xl font-sans font-semibold leading-snug tracking-normal antialiased">
                   {title}
               </p>

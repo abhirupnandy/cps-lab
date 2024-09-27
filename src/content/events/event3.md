@@ -1,5 +1,5 @@
 ---
-title: 'First Event'
+title: 'Third Event'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
 pubBy: 'Author Name'
@@ -9,7 +9,10 @@ eventName: 'CPS Plensry Talk - Towards Explainable, Responsoble, and Autonomous 
 eventDate: 'Sep 13 2024'
 eventTime: '2:00 PM IST'
 eventCategory: 'Plenary Talk'
-eventTag: 'default'
+eventTags: 
+  - Lecture
+  - Talks
+  - Workshop
 eventDescription: 'This is the event Description Lorem ipsum dolor sit amet, consectetur adipiscing elit'
 eventCardImage:
   src: '../../src/assets/Event-images/CPSPlenaryTalkImage.jpg'
