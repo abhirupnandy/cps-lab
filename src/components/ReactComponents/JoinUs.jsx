@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import TitleCard from "./TitleHeader";
+
 import accordionData from "./assets/joinUsAccordianData";
 import "./Styles/joinus.css";
 // import img from "./assets/joinus.jpg";

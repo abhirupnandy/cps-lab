@@ -1,6 +1,5 @@
 .publications {
   width: 100%;
-  overflow: hidden;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -8,11 +7,12 @@
 }
 
 .table {
-  height: 1000px;
+  height: 800px; /* Adjusted height to ensure it fits better within the layout */
   width: 100%;
   max-width: 85rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem; /* Reduced padding to minimize overall table height */
+  overflow: hidden; /* Prevents overflow of the table container */
 }
 
 .publication-button {
@@ -24,8 +24,9 @@
   font-weight: 530;
   color: white;
   border-radius: 10px;
-  border-width: 0;
+  border: none; /* Use 'none' for border for consistency */
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition for hover effect */
 }
 
 .publication-button:hover {
@@ -42,7 +43,7 @@
 
 .ag-theme-quartz .ag-header-group-cell {
   font-weight: 900;
-  font-size: 90px;
+  font-size: 1.2rem; /* Adjusted font size for better readability */
 }
 
 .ag-row-odd {
@@ -50,7 +51,7 @@
 }
 
 .ag-theme-quartz .ag-header {
-  font-size: 20px;
+  font-size: 1.2rem; /* Adjusted font size for better readability */
 }
 
 .ag-input-field-input {
@@ -59,13 +60,16 @@
 }
 
 .publication-cell {
-  font-size: 15px;
-  font-weight: 750;
+  font-size: 1rem; /* Use rem for better scalability */
+  font-weight: 700; /* Adjusted font weight for consistency */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Show ellipsis for overflowing text */
 }
 
 .publication-cell:hover {
   color: #a0034c;
-  transition: 0.3s ease-in;
+  transition: color 0.3s ease-in; /* Transition for hover color change */
 }
 
 .keywords-cell,
@@ -73,5 +77,5 @@
 .publisher-cell {
   color: grey;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1rem; /* Use rem for better scalability */
 }

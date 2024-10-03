@@ -13,7 +13,7 @@ import Tags from '../Buttons/Tags.astro';
 ---
 
 <div class="blog-card items-stretch relative max-w-sm bg-white border border-gray-200 rounded-sm shadow-sm-light dark:bg-gray-800 dark:border-gray-700 group">
-  <a class="relative overflow-hidden" href="#" aria-hidden="true" tabindex="-1">
+  <a class="relative overflow-hidden" href={ slug } aria-hidden="true" tabindex="-1">
     <img
       src={blogCardImage?.src || heroImage}
       alt={blogCardImage?.alt || 'Blog image'}
@@ -36,7 +36,7 @@ import Tags from '../Buttons/Tags.astro';
 
     <Tags tags={blogTags} />
 
-    <a href="#">
+    <a href={ slug }>
       <p class="text-2xl font-bold text-gray-900 dark:text-white transition hover:text-[var(--accent)]">{title}</p>
     </a>
 

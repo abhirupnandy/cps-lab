@@ -1,0 +1,146 @@
+---
+export const prerender = true
+
+import eventsData from './eventss.json'; // Load the events data
+
+const timeZoneMapping = {
+  'IST': 'Asia/Kolkata',
+  'UTC': 'UTC',
+  'PST': 'America/Los_Angeles',
+  'PDT': 'America/Los_Angeles',
+  'CST': 'America/Chicago',
+  'CDT': 'America/Chicago',
+  'EST': 'America/New_York',
+  'EDT': 'America/New_York',
+  'GMT': 'GMT',
+  'CET': 'Europe/Berlin',
+  'CEST': 'Europe/Berlin',
+  'EET': 'Europe/Helsinki',
+  'EEST': 'Europe/Helsinki',
+  'AEST': 'Australia/Sydney',
+  'AEDT': 'Australia/Sydney',
+  'ACST': 'Australia/Adelaide',
+  'ACDT': 'Australia/Adelaide',
+  'AWST': 'Australia/Perth',
+  'NZST': 'Pacific/Auckland',
+  'NZDT': 'Pacific/Auckland',
+  'HST': 'Pacific/Honolulu',
+  'AST': 'America/Atlantic',
+  'ADT': 'America/Atlantic',
+};
+
+// Helper function to format the event time
+function formatEventTime(eventDate, eventTime, timeZone) {
+  try {
+    const dateTimeString = `${eventDate}T${eventTime}`;
+    const date = new Date(dateTimeString);
+    const options = {
+      timeZone: timeZone,
+      hour12: true,
+      hour: 'numeric',
+      minute: 'numeric',
+    };
+    return date.toLocaleString('en-US', options);
+  } catch (e) {
+    console.error("Error in formatting date:", e);
+    return null;
+  }
+}
+
+// Map events to display
+const calendarEvents = eventsData
+  .map((event) => {
+    const { eventDate, eventTime, eventTimeZone, eventName } = event.data;
+
+    // Get the mapped timezone or default to 'Asia/Kolkata'
+    const timeZone = timeZoneMapping[eventTimeZone] || 'Asia/Kolkata';
+
+    // Format the local time
+    const localTime = formatEventTime(eventDate, eventTime, timeZone);
+
+    // Check if localTime is valid
+    if (!localTime) {
+      console.error(`Invalid local time for event: ${eventName}`);
+      return null; // Skip this event if localTime is invalid
+    }
+
+    return {
+      title: eventName,
+      date: eventDate,
+      time: localTime,
+    };
+  })
+  .filter((event) => event !== null); // Remove invalid events
+
+---
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/calendar.css">
+  <title>Calendar of Events</title>
+</head>
+<body>
+  <div class="calendar-container">
+    <h1>Calendar of Events</h1>
+    <div class="events-list">
+      {calendarEvents.length > 0 ? (
+        calendarEvents.map(event => (
+          <div class="event-card">
+            <h2>{event.title}</h2>
+            <p><strong>Date:</strong> {event.date}</p>
+            <p><strong>Time:</strong> {event.time}</p>
+          </div>
+        ))
+      ) : (
+        <p>No events to display</p>
+      )}
+    </div>
+  </div>
+
+  <script>
+    // Here, you can add any JavaScript needed for interactivity
+    // or use a calendar library if desired.
+  </script>
+</body>
+</html>
+
+
+
+<style>
+  /* calendar.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.calendar-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+.event-card h2 {
+  margin-top: 0;
+}
+
+.event-card p {
+  margin: 5px 0;
+}
+
+</style>

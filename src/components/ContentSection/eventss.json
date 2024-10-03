@@ -1,0 +1,18 @@
+[
+  {
+    "data": {
+      "eventName": "Event 1",
+      "eventDate": "2024-10-01",
+      "eventTime": "09:00 AM",
+      "eventTimeZone": "IST"
+    }
+  },
+  {
+    "data": {
+      "eventName": "Event 2",
+      "eventDate": "2024-10-02",
+      "eventTime": "10:00 AM",
+      "eventTimeZone": "UTC"
+    }
+  }
+]

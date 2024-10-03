@@ -115,7 +115,7 @@ const Publications = () => {
 
   return (
     <div className="publications">
-      <div className="table ag-theme-quartz">
+      <div className="table ag-theme-quartz" >
         <AgGridReact
           ref={tableRef}
           rowData={rowData}

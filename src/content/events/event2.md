@@ -1,15 +1,19 @@
 ---
 title: 'Second Event'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
+pubDate: 2023-02-08
 pubBy: 'Author Name'
 heroImage: '/blog-placeholder-3.jpg'
 
 eventName: 'CPS Plensry Talk - Towards Explainable, Responsoble, and Autonomous Artificial Intelligence'
-eventDate: 'Sep 13 2024'
-eventTime: '2:00 PM IST'
+eventDate: 2024-08-27 # Date in YYYY-MM-DD format
+eventTime: '02:00 PM'  # Time in 12-hour format
+eventTimeZone: 'IST'  # Timezone abbreviation (e.g., IST, UTC, PST)
 eventCategory: 'Plenary Talk'
-eventTag: 'default'
+eventTags: 
+  - Lecture
+  - Talks
+  - Workshop
 eventDescription: 'This is the event Description Lorem ipsum dolor sit amet, consectetur adipiscing elit'
 eventCardImage:
   src: '../../src/assets/Event-images/CPSPlenaryTalkImage.jpg'
