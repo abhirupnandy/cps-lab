@@ -3,6 +3,7 @@ export const prerender = true
 
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/BlogsSingleLayout.astro";
+import ShareButtons from "../../components/Buttons/ShareButtons.astro";
 
 // Fetch blog collection and generate static paths
 export async function getStaticPaths() {
@@ -23,7 +24,10 @@ const { Content } = await post.render(); // Astro will use `render()` to extract
   <article class="prose lg:prose-xl dark:prose-dark">
     <!-- Render the markdown content using the Content component -->
     <Content />
+    <ShareButtons />
   </article>
+  
+  
 </Layout>
 
 

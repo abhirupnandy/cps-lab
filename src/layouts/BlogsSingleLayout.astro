@@ -17,6 +17,7 @@ var { title, description, pubDate, updatedDate, heroImage, pubBy, readTime, blog
 
 
 import TitleHeader from "../components/TitleHeader/TitleHeader.astro"
+import ShareButtons from "../components/Buttons/ShareButtons.astro";
 
 ---
 
@@ -96,6 +97,7 @@ import TitleHeader from "../components/TitleHeader/TitleHeader.astro"
 					</div>
 					<Prose>
 						<slot />
+						<!-- <ShareButtons /> -->
 					</Prose>
 				</div>
 			</article>

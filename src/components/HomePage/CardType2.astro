@@ -15,9 +15,9 @@ const {itemList=[]}: Props = Astro.props
     {itemList.length > 0 && (
         itemList.map((item) => (
         
-        <div class={`card bg-[url(${ item.bgImgUrl })] flex-1 mx-auto text-[white] no-underline border border-solid border-gray-500 group`}>
+        <div class={`card bg-[url(${ item.bgImgUrl })] flex-1 mx-auto text-[white] no-underline border border-solid border-gray-500 group h-full`}>
             <a href={ item.itemHref } >
-                <div class=" h-full w-full bg-[rgba(57,13,40,0.96)] text-center text-[white] group-hover:bg-[rgba(97,27,85,0.85)]">
+                <div class=" h-full w-full bg-[rgba(57,13,40,0.86)] text-center text-[white] group-hover:bg-[rgba(97,27,85,0.85)]">
                     <div class=" font-poppins text-lg md:text-3xl font-bold p-12 md:px-24 md:py-24">{item.itemText}</div>
                 </div>
             </a>

@@ -83,7 +83,7 @@ import ButtonSmall from '../Buttons/ButtonSmall.astro';
       <!-- <p class="mb-14 text-md font-poppins font-semibold text-gray-700 hover:text-[var(--accent)] duration-100 ">Time: {formatEventTime(event.data.eventDate, event.data.eventTime, event.data.eventTimeZone)}</p> -->
       <p class="mb-14 text-md font-poppins font-semibold text-gray-700 hover:text-[var(--accent)] duration-100 ">Time: { event.data.eventTime } { event.data.eventTimeZone }</p>
       
-      <div class="mx-auto">
+      <div class="absolute bottom-10 left-[38%] mx-auto">
         <ButtonSmall content="View" href={ slug } icon="true"/>
       </div>
     
