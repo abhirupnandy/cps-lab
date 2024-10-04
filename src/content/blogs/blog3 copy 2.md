@@ -22,6 +22,39 @@ Blog body
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et     
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et     
 
+
+Hello Body of the blog
+
+
+thias is  my india
+![INdia](./src/assets/blog_images/1_iwlmfbkhay_h_10iz5shuw.png "Title")
+
+
+![blog placeholder](/blog-placeholder-about.jpg)
+
+![blog placeholder](/blog-placeholder-about.jpg)
+
+![blog placeholder](/blog-placeholder-about.jpg)
+
+![blog placeholder](/blog-placeholder-about.jpg)
+
+![INdia](./src/assets/blog_images/1_iwlmfbkhay_h_10iz5shuw.png "Title")
+
+
+
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+
+
 n today's interconnected world, where data breaches and cyber threats are on the rise, web security has become paramount. As the guardians of the digital realm, it's our responsibility to protect sensitive information, maintain user trust, and ensure the integrity of online systems. Let's dive into the world of web security and explore the key principles that every developer should embrace.
 
 ## **1. Authentication and Authorization**

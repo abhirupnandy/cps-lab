@@ -29,7 +29,7 @@ import CardType4 from "../components/HomePage/CardType4.jsx";
 import EventDisplay from "../components/ContentSection/EventDisplay.astro";
 
 import ButtonLarge from "../components/Buttons/ButtonLarge.astro";
-import BlogDisplay from "../components/ContentSection/BlogDisplay.astro";
+
 
 import { getCollection } from 'astro:content';
 import CardDisplay from '../components/HomePage/CardDisplay.jsx';
@@ -38,6 +38,10 @@ import CardDisplay from '../components/HomePage/CardDisplay.jsx';
 import CPSLogoWhite from "../assets/lab-Identity/logo_cypsi_white.png";
 import BlogDisplay2 from "../components/ContentSection/BlogDisplay2.astro";
 import BlogCardFeatured from "../components/ContentSection/BlogCardFeatured.astro";
+import Gallery from "../components/Gallery/Gallery.astro";
+import Testimonial from "../components/Testimonial.astro";
+import Testimonials from "../components/Testimonials/Testimonial.astro";
+
 
 // Load all markdown files in the 'domainsc' collection
 const domains = await getCollection('domainsc');
@@ -176,7 +180,29 @@ const NewsList = [
 						
 						
 					</div>
+
 				</section>
+
+				<!-- <section>
+					<div class="flex flex-col gap-8 py-24 m-2  ">
+						
+						<HeadingStyle2 Text="Gallery" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
+						<Gallery />
+						<Testimonials />
+						<HeadingStyle3 Text="Their Experience" ColorHex="[var(--accent)]"/>
+	
+					</div>
+				</section> -->
+				
+
+				<section>
+					<div class="flex flex-col gap-8 py-24 m-2  ">
+						<HeadingStyle2 Text="Their Experience" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
+						<Testimonials />
+					</div>
+				</section>
+
+
 
 
 				<section>
@@ -197,3 +223,41 @@ const NewsList = [
 		</div>
 	</body>
 </html>
+
+<style>
+	.swiper-button-prev:after,
+	.swiper-rtl .swiper-button-next:after {
+		content: '' !important;
+	}
+
+	.swiper-button-next:after,
+	.swiper-rtl .swiper-button-prev:after {
+		content: '' !important;
+	}
+
+	.swiper-button-next svg,
+	.swiper-button-prev svg {
+		width: 24px !important;
+		height: 24px !important;
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		position: relative !important;
+	}
+
+	.swiper-slide.swiper-slide-active {
+		--tw-border-opacity: 1 !important;
+		border-color: rgb(79 70 229 / var(--tw-border-opacity)) !important;
+	}
+
+	.swiper-slide.swiper-slide-active>.swiper-slide-active\:text-indigo-600 {
+		--tw-text-opacity: 1;
+		color: rgb(79 70 229 / var(--tw-text-opacity));
+	}
+
+	.swiper-slide.swiper-slide-active>.flex .grid .swiper-slide-active\:text-indigo-600 {
+		--tw-text-opacity: 1;
+		color: rgb(79 70 229 / var(--tw-text-opacity));
+	}
+</style>

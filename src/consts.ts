@@ -6,4 +6,4 @@ export const SITE_DESCRIPTION = 'Welcome to my website!';
 
 export const HOMEPAGE_ARTICLE_LIMIT = 3;
 export const HOMEPAGE_EVENT_LIMIT = 3;
-// export const ARTICLES_PER_PAGE = 6;
+export const ARTICLES_PER_PAGE = 4;

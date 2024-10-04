@@ -1,0 +1,51 @@
+[
+    {
+      "name": "John Doe",
+      "position": "CEO, Example Company",
+      "quote": "This service has transformed the way we operate.",
+      "image": "/images/testimonial1.jpg"
+    },
+    {
+      "name": "Jane Smith",
+      "position": "CTO, Another Company",
+      "quote": "Absolutely fantastic! Highly recommended.",
+      "image": "/images/testimonial2.jpg"
+    },
+    {
+      "name": "Alice Johnson",
+      "position": "Product Manager, Tech Solutions",
+      "quote": "A game changer for our workflow!",
+      "image": "/images/testimonial3.jpg"
+    },
+    {
+      "name": "Mark Brown",
+      "position": "Designer, Creative Agency",
+      "quote": "Incredible support and service!",
+      "image": "/images/testimonial4.jpg"
+    },
+    {
+      "name": "Emily Davis",
+      "position": "Marketing Director, Business Co.",
+      "quote": "Exceeded our expectations!",
+      "image": "/images/testimonial5.jpg"
+    },
+    {
+      "name": "Michael White",
+      "position": "Operations Head, Global Corp",
+      "quote": "Reliable and efficient, highly recommend!",
+      "image": "/images/testimonial6.jpg"
+    },
+    {
+      "name": "Sarah Wilson",
+      "position": "HR Lead, People First",
+      "quote": "Their service is top-notch!",
+      "image": "/images/testimonial7.jpg"
+    },
+    {
+      "name": "David Lee",
+      "position": "Finance Director, Money Matters",
+      "quote": "They helped us save time and money.",
+      "image": "/images/testimonial8.jpg"
+    }
+]
+  

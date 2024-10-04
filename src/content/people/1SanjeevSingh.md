@@ -18,7 +18,9 @@ GoogleScholar: 'https://www.linkedin.com/in/harshita-sharma-dharaman/'
 Medium: 'https://www.linkedin.com/in/harshita-sharma-dharaman/'
 
 category: 'Faculty Members'
-section:  ''
+section:  'Present Members'
+group:  #Batch 1; batch 2
+    # - Batch 1
 ---
  
  <!-- {personel.compiledContent()} -->

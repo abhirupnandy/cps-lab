@@ -24,12 +24,58 @@ const { Content } = await post.render(); // Astro will use `render()` to extract
   <article class="prose lg:prose-xl dark:prose-dark">
     <!-- Render the markdown content using the Content component -->
     <Content />
-    <ShareButtons />
+    <div class="mx-auto">
+    <ShareButtons  />
+    </div>
   </article>
   
   
 </Layout>
+<!-- 
+---
+// Ensure the prerender is set for static HTML generation
+export const prerender = true;
 
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/BlogsSingleLayout.astro";
+import ShareButtons from "../../components/Buttons/ShareButtons.astro";
+import Gallery from "../../components/Gallery/Gallery.astro";
+
+// Fetch blog collection and generate static paths
+export async function getStaticPaths() {
+  const blogs = await getCollection("blogs");
+  return blogs.map((blog) => ({
+    params: { slug: blog.slug },
+    props: blog, // Pass the blog data as props
+  }));
+}
+
+// Get the current blog post from Astro.props
+const post = Astro.props ?? {};
+const { Content, body } = await post.render(); // Ensure Content is available
+// Extract gallery images from blog content
+const galleryImages = [];
+const imageRegex = /!\[.*?\]\((.*?)\)/g;
+let match;
+let i = 1;
+while ((match = imageRegex.exec(body)) !== null) {
+  galleryImages.push({ src: match[1], alt: `Gallery Image - ${i}` });
+  i++;
+}
+--- -->
+
+<!-- Pass frontmatter to the layout component -->
+<!-- <Layout {...post.data}>
+  <article class="prose lg:prose-xl dark:prose-dark">
+    Render the markdown content using the Content component
+    <Content />
+    <div class="mx-auto">
+      <ShareButtons />
+      <Gallery galleryImages={galleryImages} />
+    </div>
+  </article>
+</Layout>
+ -->
 
 
 <!-- ---

@@ -20,7 +20,36 @@ readTime: '5 min'
 
 Blog body
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et     
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et     
+Lorem ipsum dHello Body of the blog
+
+
+thias is  my india
+![INdia](./src/assets/blog_images/1_iwlmfbkhay_h_10iz5shuw.png "Title")
+
+
+![blog placeholder](/blog-placeholder-about.jpg)
+
+![blog placeholder](/blog-placeholder-about.jpg)
+
+![blog placeholder](/blog-placeholder-about.jpg)
+
+![blog placeholder](/blog-placeholder-about.jpg)
+
+![INdia](./src/assets/blog_images/1_iwlmfbkhay_h_10iz5shuw.png "Title")
+
+
+
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
+thias is  my india
 
 For photographers and enthusiasts alike, Canon has been a symbol of excellence in the world of photography for decades. In 2024, Canon continues to lead the way in innovation, enabling us to capture life's most precious moments with unparalleled quality and precision. Let's explore the world of photography and how Canon's excellence plays a pivotal role.
 
