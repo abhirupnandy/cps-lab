@@ -33,6 +33,20 @@ thias is  my india
 
 ![blog placeholder](/blog-placeholder-about.jpg)
 
+| Item              | In Stock | Price |
+| :---------------- | :------: | ----: |
+| Python Hat        |   True   | 23.99 |
+| SQL Hat           |   True   | 23.99 |
+| Codecademy Tee    |  False   | 19.99 |
+| Codecademy Hoodie |  False   | 42.99 |
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Data 1   | Data 2   | Data 3   |
+| Data 4   | Data 5   | Data 6   |
+
+
+
 ![blog placeholder](/blog-placeholder-about.jpg)
 
 ![INdia](./src/assets/blog_images/1_iwlmfbkhay_h_10iz5shuw.png "Title")
