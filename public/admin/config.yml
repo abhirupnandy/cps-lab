@@ -1,5 +1,5 @@
-media_folder: "src/assets/blog_images" # Location where files will be stored in the repo
-public_folder: "src/assets/blog_images" # The src attribute for uploaded media
+media_folder: "src/assets/images" # Location where files will be stored in the repo
+public_folder: "src/assets/images" # The src attribute for uploaded media
 # when using the default proxy server port
 backend:
   name: git-gateway
@@ -9,10 +9,10 @@ local_backend:
   # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
   allowed_hosts: ['127.0.0.1']
 collections:
+# ###############  BLOG Collection  ####################
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "src/content/blog" # The path to the folder where the documents are stored
-
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in frontmatter
       - { label: "Title", name: "title", widget: "string" }
@@ -20,6 +20,7 @@ collections:
       - { label: "Featured Image", name: "heroImage", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
+# ###############  TEAM Collection  ################
   - name: "people"
     label: "People"
     folder: "src/content/people"
@@ -29,6 +30,7 @@ collections:
       - { label: "Position", name: "position", widget: "string" }
       - { label: "Bio", name: "bio", widget: "markdown" }
       - { label: "Photo", name: "photo", widget: "image" }
+#  ###############  PUBLICATIONS Collection  ################
   - name: "publications"
     label: "Publications"
     folder: "src/content/publications"
@@ -37,10 +39,10 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Authors", name: "authors", widget: "list", fields: [
           { label: "Name", name: "name", widget: "string" },
-          { label: "Affiliation", name: "affiliation", widget: "string" }
         ] }
       - { label: "Abstract", name: "abstract", widget: "markdown" }
       - { label: "Link", name: "link", widget: "string" }
+#  ###############  EVENTS Collection  ################
   - name: "events"
     label: "Events"
     folder: "src/content/events"
