@@ -46,6 +46,7 @@ import Testimonials3 from "../components/Testimonials/Testimonial3.astro";
 import Testimonials4 from "../components/Testimonials/Testimonials4.astro";
 import Testimonials5 from "../components/Testimonials/Testimonials5.astro";
 import Testimonials6 from "../components/Testimonials/Testimonial6.astro";
+import HeroSection from "../components/HomePage/HeroSection.astro";
 
 // Load all markdown files in the 'domainsc' collection
 const domains = await getCollection('domainsc');
@@ -104,36 +105,7 @@ const NewsList = [
 			<main class="mb-auto mt-4 sm:mt-8">
 				
 				<section class="hero-section">
-					<div class="bg-white w-[95%] sm:w-[98%] mx-auto p-2 sm:p-4">
-						<div class="grid sm:grid-cols-5">
-							<div class="relative sm:col-span-4 h-full">
-								<Carousal />
-							</div>
-							<div class="absolute bottom-2 animated-text bg-white rounded-r-lg px-10 py-8">
-								<div class="text-2xl ">Interdisciplinary Research Laboratory for </div> 
-								<!-- <div class="text-lg my-2"> @Institute of Informatics and Communication</div> -->
-								<!-- <div class="text-6xl font-semibold"> <span></span></div>  -->
-
-								<div class="text-6xl font-semibold text-[var(--accent)]"> Cyber Physical Systems </div> 
- 
-								<!-- <div class="text-xl"> Institute of Informatics and Communication</div>
-								<div class="text-5xl">CyPSi Laboratory</div>  -->
-							</div>
-
-							<div class="sm:col-span-1 pt-4 mt-4 px-10 ">
-								<div class="h-full flex flex-col items-start justify-end gap-1 pb-8">
-									<!-- <img src={ CPSLogoWhite.src } alt="CyPSi - Logo - white" class=" md:scale-[1.75] w-[100px]  mx-auto my-8"/> -->
-									<h2
-										class="text-gray-800 font-poppins font-bold text-xl sm:text-2xl leading-2 sm:leading-2">
-										About us
-									</h2>
-									<p class="text-left my-4 text-gray-800 text-md pr-8">
-										{about_text}
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
+				<HeroSection about_text={about_text} logo={CPSLogoWhite}/>
 				</section>
 
 				<section>
@@ -151,8 +123,8 @@ const NewsList = [
 				
 				<section>
 					<HeadingStyle2 Text="Spotlight" Case="uppercase" ColorHex="var(--accent)" />
-					<div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative w-[80%]">
-						<div class="grid grid-cols-1 sm:grid-cols-12 gap-16">
+					<div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
+						<div class="grid grid-cols-1 sm:grid-cols-12 gap-8">
 					
 							<div class="sm:col-span-6 lg:col-span-6">
 
@@ -170,12 +142,12 @@ const NewsList = [
 					</div>
 				</section>
 
-				<section>
-					<div class="flex flex-col gap-8 py-24 m-2 bg-[var(--gray-light)] ">
+				<section class=" bg-[var(--gray-light)] ">
+					<div class="flex flex-col scale-75 gap-8">
 						
 						<HeadingStyle1 Text="Upcoming Events" Case="uppercase" ColorHex="var(--accent)" styles="pb-4" />
 						
-						<EventDisplay styles="my-4"/>
+						<EventDisplay styles=""/>
 						
 						<ButtonLarge content="View Events" href="/events" class="mt-4"/>
 
@@ -185,7 +157,7 @@ const NewsList = [
 				</section>
 
 				<section>
-					<div class="flex flex-col gap-8 py-24 m-2  ">
+					<div class="flex flex-col gap-8 py-24 m-2 scale-75  ">
 						
 						<HeadingStyle3 Text="Lab Articles" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
 						
@@ -218,7 +190,7 @@ const NewsList = [
 				</section> -->
 
 				<section class="bg-[var(--gray-light)]">
-					<div class="flex flex-col py-12  ">
+					<div class="flex flex-col py-12 scale-75  ">
 						<HeadingStyle1 Text="Their Experience" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
 						<Testimonials6 />
 					</div>
@@ -248,55 +220,3 @@ const NewsList = [
 	</body>
 </html>
 
-<style>
-	animated-text{
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
-}
-
-.animated-text span{
-    position: relative;
-}
-
-.animated-text span::before{
-    content: "Youtuber";
-    color: var(--accent);
-    animation: words 40s infinite;
-}
-
-.animated-text span::after{
-    content: "";
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    background-color: #2f3542;
-    border-left: 2px solid var(--accent);
-    right: -8px;
-    animation: cursor 1.6s infinite, typing 40s steps(14) infinite;
-}
-
-@keyframes cursor {
-    to{
-        border-left: 2px solid #ff7f5000;
-    }
-}
-
-@keyframes words {
-    0%,50%{
-        content: "Cyber Physical Systems";
-    }
-    51%,100%{
-        content: "Cyber Physical Systems";
-    }
-}
-
-@keyframes typing {
-    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
-        width: 0;
-    }
-    5%,20%,25%,40%,45%,60%,65%,80%,85%{
-        width: calc(100% + 8px);
-    }
-}
-</style>

@@ -17,7 +17,7 @@ const featuredArticle = allBlogArticles.find((article) => article.data.blogTags.
         style=`background-image: url(${featuredArticle.data.blogCardImage?.src || featuredArticle.data.heroImage})`>
         {/* <img class="absolute  w-full object-cover" src= {featuredArticle.data.blogCardImage?.src || featuredArticle.data.heroImage} /> */}
         <div class="text-white lg:w-1/2">
-            <div class="bg-[var(--accent)] bg-opacity-95 p-5 opacity-90 backdrop-blur-lg lg:p-12">
+            <div class=" h-full bg-[var(--gray-dark)] bg-opacity-95 p-5 opacity-90 backdrop-blur-lg lg:p-12">
                 {/* <p class="mb-4 font-serif font-light">{new Date(featuredArticle.data.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p> */}
                 <p class="mb-4 font-serif font-light text-left">{formatDate(featuredArticle.data.pubDate)}</p>
                 <h2 class="font-serif text-lg font-bold text-left">{featuredArticle.data.title}</h2>

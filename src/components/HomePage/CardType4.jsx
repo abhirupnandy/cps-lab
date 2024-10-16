@@ -107,7 +107,7 @@ const CardType4 = () => {
         <p className="text-md font-bold text-left text-[var(--accent)] hover:translate-x-1 hover:text-[var(--accent-hover)]">Read more...</p>
         </a>
         {/* 
-        <a type="button" href="#" className="text-white bg-[var(--accent)] hover:bg-[var(--accent-hover)] w-[33%] focus:ring-4 focus:ring-[var(--accent-focus)] font-medium rounded-md text-sm px-5 py-2.5 me-2">
+        <a type="button" href="" className="text-white bg-[var(--accent)] hover:bg-[var(--accent-hover)] w-[33%] focus:ring-4 focus:ring-[var(--accent-focus)] font-medium rounded-md text-sm px-5 py-2.5 me-2">
           Read more
           <i class="ml-4 fa fa-arrow-right"></i>
         </a> */}

@@ -44,36 +44,59 @@ const currentPath = Astro.url.pathname;
 			<div class="block sm:hidden py-6"></div>
 			<ul class="flex flex-col space-y-8 p-6 sm:flex-row sm:space-y-0 sm:space-x-6 sm:p-0">
 				<!-- <hr class="p-0 m-0" /> -->
-				<HeaderLink
-					href="/"
-					isActive={currentPath === "/"}
-					>Home</HeaderLink
-				>
-				<HeaderLink
-					href="/research"
-					isActive={currentPath === "/research"}
-					>Research Focus</HeaderLink
-				>
-				<HeaderLink
-					href="/publications"
-					isActive={currentPath === "/publications"}
-					>Publications</HeaderLink
-				>
-				<HeaderLink
-					href="/people"
-					isActive={currentPath === "/people"}
-					>People</HeaderLink
-				>
-				<HeaderLink
-					href="/join"
-					isActive={currentPath === "/join"}
-					>Join Us</HeaderLink
-				>
-				<HeaderLink
-					href="/contact"
-					isActive={currentPath === "/contact"}
-					>Contact Us</HeaderLink
-				>
+<!-- For the HeaderLink components, pass props directly like this -->
+<HeaderLink href="/" isActive={currentPath === "/"}>Home</HeaderLink>
+
+<!-- Ensure your paths are correct -->
+<HeaderLink href="/events" isActive={currentPath === "/events"}>Events</HeaderLink>
+<HeaderLink href="/blogs" isActive={currentPath === "/blogs"}>Articles</HeaderLink>
+<HeaderLink href="/research" isActive={currentPath === "/research"}>Research Focus</HeaderLink>
+<HeaderLink href="/publications" isActive={currentPath === "/publications"}>Publications</HeaderLink>
+<HeaderLink href="/people" isActive={currentPath === "/people"}>People</HeaderLink>
+<HeaderLink href="/join" isActive={currentPath === "/join"}>Join Us</HeaderLink>
+<HeaderLink href="/contact" isActive={currentPath === "/contact"}>Contact Us</HeaderLink>
+
+<!-- 
+<HeaderLink
+href="/"
+isActive={currentPath === "/"}
+>Home</HeaderLink
+>
+<HeaderLink
+href="/research"
+isActive={currentPath === "/events"}
+>Events</HeaderLink
+>
+<HeaderLink
+href="/research"
+isActive={currentPath === "/blogs"}
+>Articles</HeaderLink
+>
+<HeaderLink
+href="/research"
+isActive={currentPath === "/research"}
+>Research Focus</HeaderLink
+>
+<HeaderLink
+href="/publications"
+isActive={currentPath === "/publications"}
+>Publications</HeaderLink
+>
+<HeaderLink
+href="/people"
+isActive={currentPath === "/people"}
+>People</HeaderLink
+>
+<HeaderLink
+href="/join"
+isActive={currentPath === "/join"}
+>Join Us</HeaderLink
+>
+<HeaderLink
+href="/contact"
+isActive={currentPath === "/contact"}
+>Contact Us</HeaderLink
+> -->
 			</ul>
 		</div>
 	</nav>

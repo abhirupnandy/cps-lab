@@ -39,10 +39,27 @@ const eventCollection = defineCollection({
   }),
 });
 
+// Define the event collection schema
+const newsCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(), // Transform to Date object
+    pubBy: z.string(),
+    heroImage: z.string().optional(),
+    newsTags: z.array(z.string()), // array of tags
+    newsCardImage: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }).optional(), // eventCardImage is an optional object
+  }),
+});
+
 // Export both collections
 export const collections = {
   blogs: blogCollection,
   events: eventCollection,
+  news: newsCollection
 };
 // import { defineCollection, z } from 'astro:content';
 
