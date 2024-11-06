@@ -3,6 +3,9 @@ import { Image } from "astro:assets";
 import carousal1 from "../assets/home-carousal/carousal1.jpg";
 import carousal2 from "../assets/home-carousal/carousal2.jpg";
 import carousal3 from "../assets/home-carousal/carousal3.jpg";
+import carousal4 from "../assets/home-carousal/carousal4.jpg";
+import carousal5 from "../assets/home-carousal/carousal5.jpg";
+
 ---
 
 <script>
@@ -47,6 +50,25 @@ import carousal3 from "../assets/home-carousal/carousal3.jpg";
 					alt="..."
 				/>
 			</div>
+			<div
+				class="hidden duration-700 ease-in-out"
+				data-carousel-item>
+				<Image
+					src={carousal4}
+					class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+					alt="..."
+				/>
+			</div>
+			<div
+				class="hidden duration-700 ease-in-out"
+				data-carousel-item>
+				<Image
+					src={carousal5}
+					class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+					alt="..."
+				/>
+			</div>
+			
 			<!-- Item 3 -->
 			<div
 				class="hidden duration-700 ease-in-out"

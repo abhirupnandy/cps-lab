@@ -1,9 +1,9 @@
 ---
 name: 'Amit Pundir'
-img: 'https://cps.iic.ac.in/wp-content/uploads/2022/04/image19-e1650871983363-400x442.jpg'
-designation: 'Professor'
+img: 'people-img/amit-pundir-400x442.jpg'
+designation: 'Associate Professor'
 qualification: 'Ph.D. University of Delhi'
-description: 'Sanjeev Singh, Ph.D. (University of Delhi, 1997), has over 20 years of experience teaching M.Sc. Informatics and specializes in networks, security, and communication technologies, with 70+ research publications. Sanjeev Singh, Ph.D. (University of Delhi, 1997), has over 20 years of experience teaching M.Sc. Informatics and specializes in networks, security, and communication technologies, with 70+ research publications.'
+description: 'Amit Pundir (Member, IEEE) received the Ph.D. degree in electronics from the University of Delhi South Campus, in 1998, and the M.Phil. degree in electronics from the University of Delhi, in 1993. His doctorate was in the field of semiconductor materials, fabrication, and characterization. He is currently a Faculty Member of the Department of Electronics, Maharaja Agrasen College, University of Delhi. He was in the Institute of Life Long Learning (ILLL), University of Delhi, as a content writer for electronics, from 2007 to 2008. His research interests include data analytics and visualization, machine learning, deep learning, and cyber-physical systems.'
 imgLink: ''
 imgAlt: ''
 # image: 

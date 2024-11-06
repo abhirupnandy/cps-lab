@@ -1,7 +1,7 @@
 ---
-title: 'International Conference On Distributed Computing And Electrical Circuits And Electronics (ICDCECE-2022)'
+title: 'CPS Lab at IIC, UDSC proposes Smart Transport Framework in new publication'
 description: 'Wireless communication technologies, smart sensors, enormously enhanced computational capabilities, intelligent controls merge to form Cyber-Physical Systems (CPSs).'
-pubDate: 2021-12-06
+pubDate: 2022-01-27
 pubBy: 'Priyal Gupta'
 heroImage: '/blog-placeholder-3.jpg'
 
@@ -16,7 +16,7 @@ blogCardImage:
   src: '/../../src/assets/Event-images/CPSPlenaryTalkImage.jpg'
   alt: 'Image description for the event'
 
-readTime: '5 min'
+readTime: '2 min'
 ---
 
 # CPS Lab at IIC, UDSC proposes Smart Transport Framework in new publication – CyPSi Lab – IIC

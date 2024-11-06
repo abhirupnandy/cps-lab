@@ -7,21 +7,21 @@
 }
 
 .table {
-  height: 800px; /* Adjusted height to ensure it fits better within the layout */
+  height: 1040px; /* Adjusted height to ensure it fits better within the layout */
   width: 100%;
-  max-width: 85rem;
+  max-width: 110rem;
   margin: 0 auto;
-  padding: 1rem; /* Reduced padding to minimize overall table height */
+  padding: 1rem; /*Reduced padding to minimize overall table height
   overflow: hidden; /* Prevents overflow of the table container */
 }
 
 .publication-button {
   background-color: var(--accent);
-  margin: 1rem auto;
+  margin: 1.2rem auto;
   height: 2.8rem;
   width: 15rem;
   font-size: 1.1rem;
-  font-weight: 530;
+  font-weight: 480;
   color: white;
   border-radius: 10px;
   border: none; /* Use 'none' for border for consistency */
@@ -30,14 +30,14 @@
 }
 
 .publication-button:hover {
-  background-color: #6d0234;
+  background-color: var(--accent-hover);
 }
 
 .ag-theme-quartz {
   --ag-wrapper-border-radius: 0px;
   --ag-header-height: 50px;
   --ag-header-foreground-color: white;
-  --ag-header-background-color: #a0034c;
+  --ag-header-background-color: var(--accent);
   --ag-header-cell-hover-background-color: rgba(135, 207, 235, 0.849);
 }
 
@@ -56,19 +56,19 @@
 
 .ag-input-field-input {
   color: black !important;
-  font-size: 15px !important;
+  font-size: 12px !important;
 }
 
 .publication-cell {
   font-size: 1rem; /* Use rem for better scalability */
-  font-weight: 700; /* Adjusted font weight for consistency */
+  font-weight: 640; /* Adjusted font weight for consistency */
   white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden; /* Hide overflow content */
   text-overflow: ellipsis; /* Show ellipsis for overflowing text */
 }
 
 .publication-cell:hover {
-  color: #a0034c;
+  color: var(--accent);
   transition: color 0.3s ease-in; /* Transition for hover color change */
 }
 
@@ -76,6 +76,6 @@
 .authors-cell,
 .publisher-cell {
   color: grey;
-  font-weight: 400;
+  font-weight: 320;
   font-size: 1rem; /* Use rem for better scalability */
 }

@@ -1,9 +1,9 @@
 ---
 name: 'Geetika Jain Saxena'
-img: 'https://cps.iic.ac.in/wp-content/uploads/2018/08/geetika-mam-1-e1650883259591-400x443.jpg'
-designation: 'Professor'
+img: '/people-img/geetika-400x443.jpg'
+designation: 'Associate Professor'
 qualification: 'Ph.D. University of Delhi'
-description: 'Sanjeev Singh, Ph.D. (University of Delhi, 1997), has over 20 years of experience teaching M.Sc. Informatics and specializes in networks, security, and communication technologies, with 70+ research publications.'
+description: 'Geetika Jain Saxena (Senior Member, IEEE) received the B.Sc. and M.Sc. degrees in electronics in 1998 and 2000, respectively, and the Ph.D. degree in modeling and simulation of optical amplifiers from the University of Delhi, India, in 2010. She is currently an Associate Professor with the Department of Electronics, Maharaja Agrasen College, University of Delhi, India. Her current research interests include digital image processing, machine learning applications, and health informatics. She is also working on design, modeling, and simulation of optical components for optical communication systems and the analysis and design of integrated optical waveguide and devices. She has over 40 publications in international and national peer-reviewed journals and conferences to her credit.'
 imgLink: ''
 imgAlt: ''
 # image: 

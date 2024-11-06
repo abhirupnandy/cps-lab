@@ -1,5 +1,5 @@
 ---
-title: International Conference On Distributed Computing And Electrical Circuits And Electronics (ICDCECE-2022)
+title: 'International Conference On Distributed Computing And Electrical Circuits And Electronics (ICDCECE-2022)'
 description: 'Medical experts employ electroencephalography (EEG) for analyzing the electrical activity in the brain to infer disorders.'
 pubDate: 2021-12-06
 pubBy: 'CPS Lab'

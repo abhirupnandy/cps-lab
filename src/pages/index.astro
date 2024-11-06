@@ -47,12 +47,16 @@ import Testimonials4 from "../components/Testimonials/Testimonials4.astro";
 import Testimonials5 from "../components/Testimonials/Testimonials5.astro";
 import Testimonials6 from "../components/Testimonials/Testimonial6.astro";
 import HeroSection from "../components/HomePage/HeroSection.astro";
+import HeroSection2 from "../components/HomePage/HeroSection2.astro";
+
 
 // Load all markdown files in the 'domainsc' collection
 const domains = await getCollection('domainsc');
 
 var about_text =
-	"The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS) The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.";
+	`The CyPSi Lab, established in 1999 at the Institute of Informatics and Communication (IIC) of University of Delhi has contributed to a wide range of domains from Educational Technologies, to scientific research papers and to Cyber Physical Systems (CPS).
+     
+	The lab offers an opportunity to be at the forefront of Research and Development (R & D) in Cyber Physical Systems (CPS) & allied disciplines and collaborate with research groups worldwide to deal with real life challenges. The research outcomes are further developed by Product and Service groups thereby promoting entrepreneurship and their delivery to intended audiences.`;
 
 var accordian_data = {
 	"Human Centered Systems":
@@ -102,14 +106,16 @@ const NewsList = [
 
 		<div class="flex flex-col h-screen justify-between">
 			<Header />
-			<main class="mb-auto mt-4 sm:mt-8">
+			<main 
+			>
+			<!-- class="mb-auto mt-4 sm:mt-8" -->
 				
 				<section class="hero-section">
-				<HeroSection about_text={about_text} logo={CPSLogoWhite}/>
+				<HeroSection2 about_text={about_text} logo={CPSLogoWhite} />
 				</section>
 
-				<section>
-					<div class="bg-white w-full flex flex-col justify-center min-h-[30rem]">
+				<section class="scale-90">
+					<div class="bg-white w-full flex flex-col justify-center min-h-[20rem]">
 						<div class="flex flex-col gap-14 my-10 items-center mx-auto">
 							<hr>
 							<!-- <HeadingStyle3 Text="Research Areas" Case="uppercase" ColorHex="" /> -->
@@ -157,17 +163,17 @@ const NewsList = [
 				</section>
 
 				<section>
-					<div class="flex flex-col gap-8 py-24 m-2 scale-75  ">
+					<div class="flex flex-col gap-8 scale-75  ">
 						
 						<HeadingStyle3 Text="Lab Articles" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
 						
 						<BlogDisplay2 styles="my-4"/>
 						
 						<ButtonLarge content="View All Atricles" href="/blogs" class="mt-4"/>
-
-						
 						
 					</div>
+					
+					<hr>
 
 				</section>
 
@@ -189,17 +195,19 @@ const NewsList = [
 					</div>
 				</section> -->
 
-				<section class="bg-[var(--gray-light)]">
+
+
+				<!-- <section class="bg-[var(--gray-light)]">
 					<div class="flex flex-col py-12 scale-75  ">
 						<HeadingStyle1 Text="Their Experience" Case="titlecase" ColorHex="var(--accent)" styles="pb-4" />
 						<Testimonials6 />
 					</div>
-				</section>
+				</section> -->
 
 
 
 
-				<section>
+				<section class="bg-[var(--gray-light)]">
 					<div class = "bg-white w-full flex flex-col h-[30rem]  items-center justify-center">
 						<div class = "flex flex-col gap-8">
     					<HeadingStyle1 Text="Collaborate with us" Case="uppercase" ColorHex="var(--accent)" LineColorHex="#0A0A0A"/>
@@ -207,6 +215,8 @@ const NewsList = [
 						</div>
 					</div>
 				</section>
+
+				
 
 				
 

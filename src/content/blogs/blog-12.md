@@ -1,5 +1,5 @@
 ---
-title: International Conference On Distributed Computing And Electrical Circuits And Electronics (ICDCECE-2022)
+title: 'Template Blog'
 description: 'Lorem ipsum dolor sit amet this is the description of the blog that will be visible in the event card on the homepage'
 pubDate: 2021-12-06
 pubBy: 'CPS Lab'

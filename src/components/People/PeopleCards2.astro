@@ -29,7 +29,7 @@ const {
 // const AllPeople = await Astro.glob("../content/")/
 
 ---
-<div class="w-1/3 p-4 ">
+<div class=" p-4 w-full md:w-1/3 my-2  "> 
 <div class=' card flex p-6 gap-4 border rounded-sm shadow-sm hover:shadow-md xs:flex-col md:flex-row xs:flex-wrap my-2
 
 '>
@@ -42,14 +42,14 @@ const {
   <div class=' flex flex-col gap-2'>
     
     <div class='details flex flex-col'>
-      <p class='text-[#192f59] text-xl font-bold uppercase'>{ name } </p>
-      <hr class="w-full"/>
+      <p class='text-[#192f59] text-xl text-center font-bold uppercase'>{ name } </p>
+      <hr class="w-full text-center"/>
       
-      {  designation && <p class='designation font-semibold text-sm text-[#7A7A7A]'>{ designation }</p>}
-      <p class='qualification text-sm text-[#7A7A7A] font-normal'>{ qualification }</p>
+      {  designation && <p class='designation font-semibold text-sm text-center text-[#7A7A7A]'>{ designation }</p>}
+      <p class='qualification text-sm text-center text-[#7A7A7A] font-normal'>{ qualification }</p>
     </div>
 
-      <PeopleSocials LinkedIn={LinkedIn} GoogleScholar={GoogleScholar}, Scopus={Scopus}, OrcID={OrcID}, ResearchGate={ResearchGate}, Medium={Medium}/>
+      <PeopleSocials LinkedIn={LinkedIn},  Medium={Medium}/>
       </div>
   </div>
 </div>

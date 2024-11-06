@@ -1,6 +1,6 @@
 ---
 // Astro component
-// const testimonials = await fetch('./public/testimonials.json').then((res) => res.json());
+// const testimonials = await fetch('./testimonials.json').then((res) => res.json());
 
 // testimonials.astro
 const testimonials = [
@@ -9,22 +9,14 @@ const testimonials = [
     post: "Working @Truminds",
     cpspost: "Intern - Batch-1",
     quote: "This service has transformed the way we operate. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    image: "/public/KunalSharma.jpg",
+    image: "/KunalSharma.jpg",
   },
   {
     name: "Kunal Sharma",
     post: "Working @Truminds",
     cpspost: "Intern - Batch-1",
     quote: "This service has transformed the way we operate.",
-    image: "/public/KunalSharma.jpg",
-  },
-  
-  {
-    name: "Kunal Sharma",
-    post: "Working @Truminds",
-    cpspost: "Intern - Batch-1",
-    quote: "This service has transformed the way we operate.",
-    image: "/public/KunalSharma.jpg",
+    image: "/KunalSharma.jpg",
   },
   
   {
@@ -32,7 +24,7 @@ const testimonials = [
     post: "Working @Truminds",
     cpspost: "Intern - Batch-1",
     quote: "This service has transformed the way we operate.",
-    image: "/public/KunalSharma.jpg",
+    image: "/KunalSharma.jpg",
   },
   
   {
@@ -40,7 +32,7 @@ const testimonials = [
     post: "Working @Truminds",
     cpspost: "Intern - Batch-1",
     quote: "This service has transformed the way we operate.",
-    image: "/public/KunalSharma.jpg",
+    image: "/KunalSharma.jpg",
   },
   
   {
@@ -48,7 +40,7 @@ const testimonials = [
     post: "Working @Truminds",
     cpspost: "Intern - Batch-1",
     quote: "This service has transformed the way we operate.",
-    image: "/public/KunalSharma.jpg",
+    image: "/KunalSharma.jpg",
   },
   
   {
@@ -56,7 +48,7 @@ const testimonials = [
     post: "Working @Truminds",
     cpspost: "Intern - Batch-1",
     quote: "This service has transformed the way we operate.",
-    image: "/public/KunalSharma.jpg",
+    image: "/KunalSharma.jpg",
   },
   
   {
@@ -64,7 +56,7 @@ const testimonials = [
     post: "Working @Truminds",
     cpspost: "Intern - Batch-1",
     quote: "This service has transformed the way we operate.",
-    image: "/public/KunalSharma.jpg",
+    image: "/KunalSharma.jpg",
   },
   
   {
@@ -72,7 +64,15 @@ const testimonials = [
     post: "Working @Truminds",
     cpspost: "Intern - Batch-1",
     quote: "This service has transformed the way we operate.",
-    image: "/public/KunalSharma.jpg",
+    image: "/KunalSharma.jpg",
+  },
+  
+  {
+    name: "Kunal Sharma",
+    post: "Working @Truminds",
+    cpspost: "Intern - Batch-1",
+    quote: "This service has transformed the way we operate.",
+    image: "/KunalSharma.jpg",
   },
   
 
@@ -126,7 +126,7 @@ const testimonials = [
   </div>
 </div>
 
-<script>
+<script is:inline>
     import Swiper from 'swiper';
     import 'swiper/swiper-bundle.css';
 

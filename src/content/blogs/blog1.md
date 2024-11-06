@@ -1,21 +1,20 @@
 ---
-title: 'This is the First Blog - CPS Lab'
-description: 'Lorem ipsum dolor sit amet this is the description of the blog that will be visible in the event card on the homepage'
-pubDate: 2023-07-10 
-pubBy: 'Harshita Sharma'
-heroImage: '/blog-placeholder-3.jpg'
-
-blogCategory: 'Article'
-blogTags: 
-  - featured
-  - human-computer-interaction
-  - machine-learning
-
+title: This is the First Blog - CPS Lab
+description: Lorem ipsum dolor sit amet this is the description of the blog that
+  will be visible in the event card on the homepage
+pubDate: 2023-07-10
+pubBy: Harshita Sharma
+heroImage: /blog-placeholder-3.jpg
 blogCardImage:
-  src: '/../../src/assets/Event-images/CPSPlenaryTalkImage.jpg'
-  alt: 'Image description for the event'
-
-readTime: '5 min'
+  src: /../../src/assets/Event-images/CPSPlenaryTalkImage.jpg
+  alt: Image description for the event
+blogCategory: Article
+blogTags:
+  - research
+  - publication
+  - events
+  - conference-paper
+readTime: 5 min
 ---
 
 Blog body

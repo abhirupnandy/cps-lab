@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Card from '../HomePage/Card';
+import Card2 from '../HomePage/Card2';
+
 
 const CardType4 = () => {
   // Array of card data
@@ -74,16 +76,16 @@ const CardType4 = () => {
   };
 
   return (
-    <div className=" bg-white grid grid-cols-1 md:grid-cols-2 xs:flex-col gap-1 w-[75%] p-8 mb-8 shadow-md border-[1px] hover:shadow-lg">
+    <div className=" bg-white grid grid-cols-1 md:grid-cols-2 xs:flex-col w-[90%] mb-8 shadow-sm border-[1px] hover:shadow-md">
       {/* Left Column (Cards) */}
       {/* <!-- Left side: Cards list --> */}
       {/* <div class="container mx-auto px-[12px] md:px-24 xl:px-12 max-w-[1300px] nanum2"> */}
-      <div className="scale-[0.8] grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-28 lg:gap-y-16">
+      <div className="scale-[0.7] grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-28 lg:gap-y-16">
  
           {/* Cards with click functionality */}
           {cardsData.map((card, index) => (
           
-           <Card 
+           <Card
               key={index}
               title={card.title}
               image={card.image}
@@ -95,7 +97,7 @@ const CardType4 = () => {
       {/* </div> */}
 
       {/* Right Column (Dynamic Content) */}
-      <div className="w-5/7 flex flex-col flex-1 gap-10 p-12">
+      <div className="w-5/7 flex flex-col flex-1 gap-10 p-12 my-8">
         <p className="font-bold text-left text-3xl text-[var(--accent)]">
           {selectedTitle}
         </p>

@@ -65,10 +65,11 @@ heroImage="blog-placeholder-about.jpg"
 
 <section class="h-full">
     <HeadingStyle4 Text="Events" Case="titlecase", ColorHex="#0000ff"/>
-    <div class="w-[80rem] mx-auto flex justify-center">
+    <div class=" w-[80rem] mx-auto flex justify-center">
 
     
-		<ul class="flex flex-col md:flex-row flex-start gap-7 items-stretch flex-wrap my-8">
+		<ul class="  scale-75 flex flex-col md:flex-row flex-start gap-7 items-stretch flex-wrap my-8">
+<!-- -top-50 -->
 
             {allEvents.map((event)=>  <EventCard2 event={event} slug={`/events/${event.slug}`} /> )}
    
