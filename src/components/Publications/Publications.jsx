@@ -14,6 +14,8 @@ const commonColumnOptions = {
   resizable: false,
 };
 
+
+
 // Disable column autosizing
 const autoSizeStrategy = {
   type: "fitCellContents",

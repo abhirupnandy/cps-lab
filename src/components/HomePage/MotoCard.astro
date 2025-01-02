@@ -25,10 +25,10 @@ const motoCards = [
 
 ---
 <>
-<div class="pink-board bg-pink-800 w-full flex flex-row rounded-sm">
+<div class=" bg-[var(--accent)] w-full flex flex-row rounded-sm">
 
 {motoCards.map((card) =>(
-    <div class=" w-3/12 h-full flex flex-col justify-center items-center even:bg-pink-900">
+    <div class=" w-3/12 h-full flex flex-col justify-center items-center even:bg-[var(--accent-hover)]">
       <Image src={card.image} alt={card.title}  class="h-full pt-6 pb-2" />
       <p class="text-white text-md font-bold pb-4">{card.title}</p>
     </div>

@@ -13,7 +13,9 @@ import Prose from "../components/Prose.astro";
 type Props = CollectionEntry<"events">["data"];
 
 var { title, description, pubDate, updatedDate, heroImage, pubBy, readTime, eventCardImage, eventName, eventDate, eventTime, eventTimeZone } = Astro.props;
-// heroImage = "/" + heroImage;
+heroImage = "/" + heroImage;
+eventCardImage = "/" + eventCardImage;
+
 
 
 import TitleHeader from "../components/TitleHeader/TitleHeader.astro"

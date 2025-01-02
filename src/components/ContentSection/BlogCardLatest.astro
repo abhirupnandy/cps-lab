@@ -3,6 +3,7 @@ const { blog, slug } = Astro.props;
 
 // Destructure the blog fields from blog.data
 const { title, description, pubDate, pubBy, heroImage, blogCategory, blogTags, blogCardImage, readTime } = blog.data;
+let final_heroImage = '../../' + heroImage; 
 
 import { formatDate } from '../../js/utils';
 import ButtonOutline from '../Buttons/ButtonOutline.astro';
@@ -14,14 +15,14 @@ import Tags from '../Buttons/Tags.astro';
 
 <div class="hidden lg:block blog-card relative  bg-white border border-gray-200 rounded-sm shadow-sm-light dark:bg-gray-800 dark:border-gray-700 group">
   <div class="flex">
-  <div>
+  <div class="w-[40%]">
   <a class="relative overflow-hidden" href="#" aria-hidden="true" tabindex="-1">
     <img
       src={blogCardImage?.src || heroImage}
       alt={blogCardImage?.alt || 'Blog image'}
      
       
-      class="object-fit overflow-hidden min-h-full"
+      class="object-cover overflow-hidden min-h-full"
     >
     <div class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-40"></div>
   </a>

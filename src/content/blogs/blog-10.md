@@ -4,9 +4,9 @@ title: Vajratiya Vajrabol – Research Scholar @CPS Lab – Wins Favorable Proje
 description: This article covers fundamental aspacts of Multi-class Text Classification
 pubDate: 2024-09-29
 pubBy: Harshita Sharma
-heroImage: '/../../src/assets/Event-images/Tiya-Bashathon_google-1.jpg'
+heroImage: '/../../src/assets/event-images/Tiya-Bashathon_google-1.jpg'
 blogCardImage:
-  src: '/../../src/assets/Event-images/Tiya-Bashathon_google-1.jpg'
+  src: '/../../src/assets/event-images/Tiya-Bashathon_google-1.jpg'
   alt: Image description for the event
 blogCategory: Lab Article
 blogTags:

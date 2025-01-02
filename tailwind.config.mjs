@@ -4,6 +4,8 @@ export default {
 		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
 		'./node_modules/flowbite/**/*.js'
 	],
+
+	
     
 	theme: {
         // make default font roboto
@@ -20,6 +22,6 @@ export default {
         },
 	},
 	plugins: [
-		require('flowbite/plugin',  '@tailwindcss/typography')
+		require('flowbite/plugin',  '@tailwindcss/typography', 'tailwindcss-motion')
 	],
 }

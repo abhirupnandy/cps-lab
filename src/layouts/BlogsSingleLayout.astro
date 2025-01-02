@@ -13,7 +13,10 @@ import Prose from "../components/Prose.astro";
 type Props = CollectionEntry<"blogs">["data"];
 
 var { title, description, pubDate, updatedDate, heroImage, pubBy, readTime, blogCardImage } = Astro.props;
-// heroImage = "/" + heroImage;
+heroImage = "/../../" + heroImage;
+blogCardImage = "/../../" + blogCardImage;
+
+
 
 
 import TitleHeader from "../components/TitleHeader/TitleHeader.astro"
