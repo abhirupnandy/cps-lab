@@ -19,6 +19,10 @@ export default defineConfig({
   //   plugins: [svgLoader()]
   // },
 
+  adapter: node({
+    mode: 'standalone',
+  }),
+
   content: {
     // Define the schema for your content collection
     schemas: {
