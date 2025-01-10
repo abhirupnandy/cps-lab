@@ -1,5 +1,5 @@
 ---
-export const prerender = true
+export const prerender = true;
 import { type CollectionEntry, getCollection } from "astro:content";
 import EventsLayout from "../../layouts/EventsSingleLayout.astro";
 // import EventsLayout from "../../layouts/BlogPost.astro";
@@ -19,6 +19,18 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<EventsLayout {...post.data}>
+<EventsLayout
+	title={post.data.title}
+	description={post.data.description}
+	pubDate={post.data.pubDate}
+	pubBy={post.data.pubBy}
+	eventName={post.data.eventName || ""}
+	eventDate={post.data.eventDate || new Date()}
+	eventTime={post.data.eventTime || ""}
+	eventCategory={post.data.eventCategory || ""}
+	eventTags={post.data.eventTags || []}
+	eventDescription={post.data.eventDescription || ""}
+	heroImage={post.data.heroImage}
+	eventCardImage={post.data.eventCardImage}>
 	<Content class="text-justify" />
 </EventsLayout>
