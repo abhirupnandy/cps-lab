@@ -15,7 +15,7 @@ const { href, isActive = false } = Astro.props;
 			"transition-colors duration-200 font-poppins font-semibold text-[var(--accent-dark)] text-base leading-7 hover:scale-105 ",
 			isActive ?
 				"scale-105 sm:text-[var(--accent)] sm:border-b-2 sm:border-[var(--accent)]"
-			:	"text-gray-200 sm:text-gray-800 sm:hover:text-[var(--accent)] hover:text-white hover:sm:border-b-2 border-[var(--accent)] text-opacity-65",
+			:	"text-gray-600 sm:text-gray-800 sm:hover:text-[var(--accent)] hover:text-[var(--accent-2)] hover:sm:border-b-2 border-[var(--accent)] text-opacity-65",
 		]}>
 		<slot />
 	</a>

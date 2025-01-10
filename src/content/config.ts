@@ -55,11 +55,22 @@ const newsCollection = defineCollection({
   }),
 });
 
+// Define the event collection schema
+const updatesCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    descriptioinn: z.string(),
+    pubDate: z.coerce.date(), // Transform to Date object
+    url: z.string(),
+  }),
+});
+
 // Export both collections
 export const collections = {
   blogs: blogCollection,
   events: eventCollection,
-  news: newsCollection
+  news: newsCollection,
+  updates: updatesCollection,
 };
 // import { defineCollection, z } from 'astro:content';
 

@@ -15,14 +15,14 @@ const { img, icon, title } = Astro.props;
 
 <style>
 .flex-item {
-  border: 5px solid #752a65;
+  border: 5px solid var(--accent);
   position: relative;
   border-radius: 3px;
   /* margin-bottom: 50px; */
   height: 196px;
   width: 600px;
   text-align: center;
-  background-color: #752a65;
+  background-color: var(--accent);
 }
 
 .research-card-bg {
@@ -37,7 +37,7 @@ const { img, icon, title } = Astro.props;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #752a65;
+  background-color: var(--accent);
 }
 .card-icon {
   filter: invert(1);

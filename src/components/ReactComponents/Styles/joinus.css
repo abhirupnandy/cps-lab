@@ -10,7 +10,7 @@
 }
 
 .ju-first {
-  border-bottom: 3px solid #a0034c;
+  border-bottom: 3px solid var(--accent);
   margin-left: 30px;
   margin-right: 30px;
 }
@@ -25,7 +25,7 @@
 }
 .ju-first-stipend {
   font-size: 20px;
-  color: #891668;
+  color: var(--accent);
   padding: 20px 10px 40px 10px;
 }
 .ju-steps {
@@ -33,7 +33,7 @@
   margin: 40px 30px 20px 40px;
   padding-bottom: 30px;
   /* max-height: 25rem; */
-  border-bottom: 3px solid #a0034c;
+  border-bottom: 3px solid var(--accent);
 }
 .selection-heading {
   font-weight: 700;
@@ -46,7 +46,7 @@
   align-items: flex-start;
 }
 .step-idx {
-  color: #a0034c;
+  color: var(--accent);
   margin: 0px 33px 0px 7px;
   max-width: 20px;
   font-size: 45px;
@@ -76,7 +76,7 @@
   margin-left: 30px;
   margin-right: 30px;
   padding: 20px;
-  border-bottom: 3px solid #a0034c;
+  border-bottom: 3px solid var(--accent);
 }
 
 .problem-domains > h3 {
@@ -97,7 +97,7 @@
   text-align: left;
   border: none;
   background-color: white;
-  color: #a0034c;
+  color: var(--accent);
   font: 14px "Poppins";
   text-transform: uppercase;
   cursor: pointer;
@@ -163,7 +163,7 @@
   border-radius: 30px;
   cursor: pointer;
   border-style: none;
-  background-color: #a0034c;
+  background-color: var(--accent);
   width: 15em;
   font-size: 15px;
   font-weight: 700;

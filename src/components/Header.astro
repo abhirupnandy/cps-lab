@@ -40,9 +40,9 @@ const currentPath = Astro.url.pathname;
 		</button>
 		<div
 			id="sidebar"
-			class="fixed top-0 right-0 bottom-0 w-64 md:bg-white bg-gray-700 opacity-95 md:opacity-1 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out sm:relative sm:transform-none sm:shadow-none sm:w-auto px-0 sm:px-6">
+			class="fixed top-0 right-0 bottom-0 w-64 md:bg-white bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out sm:relative sm:transform-none sm:shadow-none sm:w-auto px-0 sm:px-6">
 			<div class="block sm:hidden py-6"></div>   
-			<ul class="flex flex-col space-y-8 p-6 sm:flex-row sm:space-y-0 sm:space-x-6 sm:p-0 text-white">
+			<ul class="flex flex-col space-y-8 p-6 sm:flex-row sm:space-y-0 sm:space-x-6 sm:p-0 text-[var(--accent)]">
 				<!-- <hr class="p-0 m-0" /> -->
 <!-- For the HeaderLink components, pass props directly like this -->
 <HeaderLink href="/" isActive={currentPath === "/"}>Home</HeaderLink>
